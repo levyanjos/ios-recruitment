@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		D7161BBC23A1567A00951262 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7161BBB23A1567A00951262 /* AppDelegate.swift */; };
-		D7161BBE23A1567A00951262 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7161BBD23A1567A00951262 /* SceneDelegate.swift */; };
 		D7161BC023A1567A00951262 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7161BBF23A1567A00951262 /* ViewController.swift */; };
 		D7161BC323A1567A00951262 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7161BC123A1567A00951262 /* Main.storyboard */; };
 		D7161BC623A1567A00951262 /* MovieShelf.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D7161BC423A1567A00951262 /* MovieShelf.xcdatamodeld */; };
@@ -38,7 +37,6 @@
 /* Begin PBXFileReference section */
 		D7161BB823A1567A00951262 /* MovieShelf.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieShelf.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7161BBB23A1567A00951262 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D7161BBD23A1567A00951262 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		D7161BBF23A1567A00951262 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D7161BC223A1567A00951262 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D7161BC523A1567A00951262 /* MovieShelf.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MovieShelf.xcdatamodel; sourceTree = "<group>"; };
@@ -102,7 +100,6 @@
 			isa = PBXGroup;
 			children = (
 				D7161BBB23A1567A00951262 /* AppDelegate.swift */,
-				D7161BBD23A1567A00951262 /* SceneDelegate.swift */,
 				D7161BBF23A1567A00951262 /* ViewController.swift */,
 				D7161BC123A1567A00951262 /* Main.storyboard */,
 				D7161BC723A1567C00951262 /* Assets.xcassets */,
@@ -141,6 +138,7 @@
 				D7161BB423A1567A00951262 /* Sources */,
 				D7161BB523A1567A00951262 /* Frameworks */,
 				D7161BB623A1567A00951262 /* Resources */,
+				D7161BEE23A1573100951262 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -257,6 +255,26 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		D7161BEE23A1573100951262 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: Swiftlint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D7161BB423A1567A00951262 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -265,7 +283,6 @@
 				D7161BC023A1567A00951262 /* ViewController.swift in Sources */,
 				D7161BC623A1567A00951262 /* MovieShelf.xcdatamodeld in Sources */,
 				D7161BBC23A1567A00951262 /* AppDelegate.swift in Sources */,
-				D7161BBE23A1567A00951262 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,6 +458,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 84MA3JMGLA;
 				INFOPLIST_FILE = MovieShelf/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -459,6 +477,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 84MA3JMGLA;
 				INFOPLIST_FILE = MovieShelf/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
