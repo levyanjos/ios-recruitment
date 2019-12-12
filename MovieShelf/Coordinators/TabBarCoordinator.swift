@@ -24,20 +24,20 @@ class TabBarCoordinator: Coordinator {
     
     func start() {
         //instancia tela e mostra a partir de presenter
-        let navigation1 = UINavigationController()
-        let coordinator1 = ViewControllerCoordinator(presenter: navigation1, color: .white)
-        coordinator1.start()
+        let moviesNavigation = UINavigationController()
+        let moviesCoordinator = MoviesViewControllerCoordinator(presenter: moviesNavigation)
+        moviesCoordinator.start()
         
-        let navigation2 = UINavigationController()
-        let coordinator2 = ViewControllerCoordinator(presenter: navigation2, color: .green)
-        coordinator2.start()
+        let searchNavigation = UINavigationController()
+        let searchCoordinator = SearchViewControllerCoordinator(presenter: searchNavigation)
+        searchCoordinator.start()
         
-        let navigation3 = UINavigationController()
-        let coordinator3 = ViewControllerCoordinator(presenter: navigation3, color: .blue)
-        coordinator3.start()
+        let configurationNavigation = UINavigationController()
+        let configurationCoordinator = ConfigurationViewControllerCoordinator(presenter: configurationNavigation)
+        configurationCoordinator.start()
         
-        tabBarController.viewControllers = [navigation1, navigation2, navigation3]
-        self.childCoordinators = [coordinator1, coordinator2, coordinator3]
+        tabBarController.viewControllers = [moviesNavigation, searchNavigation, configurationNavigation]
+        self.childCoordinators = [moviesCoordinator, searchCoordinator, configurationCoordinator]
         self.presenter.pushViewController(tabBarController, animated: true)
     }
     
