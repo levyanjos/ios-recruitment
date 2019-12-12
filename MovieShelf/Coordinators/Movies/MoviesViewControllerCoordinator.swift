@@ -15,7 +15,7 @@ class MoviesViewControllerCoordinator: Coordinator {
     
     init(presenter: UINavigationController) {
         self.presenter = presenter
-        self.viewController = UIViewController()
+        self.viewController = ViewController()
     }
     
     func start() {
