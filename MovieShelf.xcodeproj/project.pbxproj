@@ -15,8 +15,10 @@
 		D7161BD623A1567C00951262 /* MovieShelfTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7161BD523A1567C00951262 /* MovieShelfTests.swift */; };
 		D7161BE123A1567C00951262 /* MovieShelfUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7161BE023A1567C00951262 /* MovieShelfUITests.swift */; };
 		D78D052E23A276DE00653918 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78D052D23A276DE00653918 /* Coordinator.swift */; };
-		D78D053023A2773700653918 /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78D052F23A2773700653918 /* ApplicationCoordinator.swift */; };
 		D78D053223A27BCF00653918 /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78D053123A27BCF00653918 /* TabBarCoordinator.swift */; };
+		D78D053823A2820500653918 /* MoviesViewControllerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78D053723A2820500653918 /* MoviesViewControllerCoordinator.swift */; };
+		D78D053A23A2821600653918 /* SearchViewControllerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78D053923A2821600653918 /* SearchViewControllerCoordinator.swift */; };
+		D78D053C23A2823500653918 /* ConfigurationViewControllerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78D053B23A2823500653918 /* ConfigurationViewControllerCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,8 +53,10 @@
 		D7161BE023A1567C00951262 /* MovieShelfUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieShelfUITests.swift; sourceTree = "<group>"; };
 		D7161BE223A1567C00951262 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D78D052D23A276DE00653918 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
-		D78D052F23A2773700653918 /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
 		D78D053123A27BCF00653918 /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
+		D78D053723A2820500653918 /* MoviesViewControllerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesViewControllerCoordinator.swift; sourceTree = "<group>"; };
+		D78D053923A2821600653918 /* SearchViewControllerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewControllerCoordinator.swift; sourceTree = "<group>"; };
+		D78D053B23A2823500653918 /* ConfigurationViewControllerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationViewControllerCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,11 +171,37 @@
 		D78D052C23A2766D00653918 /* Coordinators */ = {
 			isa = PBXGroup;
 			children = (
+				D78D053623A2818700653918 /* Configuration */,
+				D78D053523A2817F00653918 /* Search */,
+				D78D053423A2816D00653918 /* Movies */,
 				D78D052D23A276DE00653918 /* Coordinator.swift */,
-				D78D052F23A2773700653918 /* ApplicationCoordinator.swift */,
 				D78D053123A27BCF00653918 /* TabBarCoordinator.swift */,
 			);
 			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		D78D053423A2816D00653918 /* Movies */ = {
+			isa = PBXGroup;
+			children = (
+				D78D053723A2820500653918 /* MoviesViewControllerCoordinator.swift */,
+			);
+			path = Movies;
+			sourceTree = "<group>";
+		};
+		D78D053523A2817F00653918 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				D78D053923A2821600653918 /* SearchViewControllerCoordinator.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		D78D053623A2818700653918 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				D78D053B23A2823500653918 /* ConfigurationViewControllerCoordinator.swift */,
+			);
+			path = Configuration;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -325,7 +355,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D78D053023A2773700653918 /* ApplicationCoordinator.swift in Sources */,
+				D78D053A23A2821600653918 /* SearchViewControllerCoordinator.swift in Sources */,
+				D78D053823A2820500653918 /* MoviesViewControllerCoordinator.swift in Sources */,
+				D78D053C23A2823500653918 /* ConfigurationViewControllerCoordinator.swift in Sources */,
 				D78D052E23A276DE00653918 /* Coordinator.swift in Sources */,
 				D78D053223A27BCF00653918 /* TabBarCoordinator.swift in Sources */,
 				D7161BC023A1567A00951262 /* ViewController.swift in Sources */,

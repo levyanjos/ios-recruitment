@@ -12,49 +12,36 @@ import UIKit
 class TabBarCoordinator: Coordinator {
     
     //"o pai" da tela que será instanciada pela coordinator
-    let presenter: UINavigationController
+    let window: UIWindow
     let tabBarController: UITabBarController
     var childCoordinators = [Coordinator]()
     
-    init(presenter: UINavigationController) {
+    init(window: UIWindow) {
         //inicializa atributos do coordinator
-        self.presenter = presenter
+        self.window = window
         self.tabBarController = UITabBarController()
     }
     
     func start() {
         //instancia tela e mostra a partir de presenter
-        let navigation1 = UINavigationController()
-        let coordinator1 = ViewControllerCoordinator(presenter: navigation1, color: .white)
-        coordinator1.start()
+        let moviesNavigation = UINavigationController()
+        let moviesCoordinator = MoviesViewControllerCoordinator(presenter: moviesNavigation)
+        moviesCoordinator.start()
         
-        let navigation2 = UINavigationController()
-        let coordinator2 = ViewControllerCoordinator(presenter: navigation2, color: .green)
-        coordinator2.start()
+        let searchNavigation = UINavigationController()
+        let searchCoordinator = SearchViewControllerCoordinator(presenter: searchNavigation)
+        searchCoordinator.start()
         
-        let navigation3 = UINavigationController()
-        let coordinator3 = ViewControllerCoordinator(presenter: navigation3, color: .blue)
-        coordinator3.start()
+        let configurationNavigation = UINavigationController()
+        let configurationCoordinator = ConfigurationViewControllerCoordinator(presenter: configurationNavigation)
+        configurationCoordinator.start()
         
-        tabBarController.viewControllers = [navigation1, navigation2, navigation3]
-        self.childCoordinators = [coordinator1, coordinator2, coordinator3]
-        self.presenter.pushViewController(tabBarController, animated: true)
+        tabBarController.viewControllers = [moviesNavigation, searchNavigation, configurationNavigation]
+        self.childCoordinators = [moviesCoordinator, searchCoordinator, configurationCoordinator]
+        
+        self.window.rootViewController = tabBarController
+        self.window.makeKeyAndVisible()
+        
     }
     
-}
-
-class ViewControllerCoordinator: Coordinator {
-    
-    let presenter: UINavigationController
-    let viewController: UIViewController
-    
-    init(presenter: UINavigationController, color: UIColor) {
-        self.presenter = presenter
-        self.viewController = UIViewController()
-        self.viewController.view.backgroundColor = color
-    }
-    
-    func start() {
-        self.presenter.pushViewController(viewController, animated: true)
-    }
 }
