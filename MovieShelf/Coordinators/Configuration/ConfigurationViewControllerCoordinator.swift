@@ -19,7 +19,7 @@ class ConfigurationViewControllerCoordinator: Coordinator {
     }
     
     func start() {
-        presenter.title = "Search"
+        viewController.title = "Configuration"
         self.presenter.pushViewController(viewController, animated: true)
     }
 }

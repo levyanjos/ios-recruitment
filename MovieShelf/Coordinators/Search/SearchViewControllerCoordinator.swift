@@ -19,7 +19,7 @@ class SearchViewControllerCoordinator: Coordinator {
     }
     
     func start() {
-        presenter.title = "Search"
+        viewController.title = "Search"
         self.presenter.pushViewController(viewController, animated: true)
     }
 }

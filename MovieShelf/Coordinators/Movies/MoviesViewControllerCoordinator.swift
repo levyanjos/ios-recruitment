@@ -19,7 +19,8 @@ class MoviesViewControllerCoordinator: Coordinator {
     }
     
     func start() {
-        presenter.title = "Movies"
+        viewController.title = "Movies"
+        viewController.navigationItem.title = "Movies"
         self.presenter.pushViewController(viewController, animated: true)
     }
 }

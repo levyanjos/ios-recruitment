@@ -12,13 +12,13 @@ import UIKit
 class TabBarCoordinator: Coordinator {
     
     //"o pai" da tela que será instanciada pela coordinator
-    let presenter: UINavigationController
+    let window: UIWindow
     let tabBarController: UITabBarController
     var childCoordinators = [Coordinator]()
     
-    init(presenter: UINavigationController) {
+    init(window: UIWindow) {
         //inicializa atributos do coordinator
-        self.presenter = presenter
+        self.window = window
         self.tabBarController = UITabBarController()
     }
     
@@ -38,23 +38,10 @@ class TabBarCoordinator: Coordinator {
         
         tabBarController.viewControllers = [moviesNavigation, searchNavigation, configurationNavigation]
         self.childCoordinators = [moviesCoordinator, searchCoordinator, configurationCoordinator]
-        self.presenter.pushViewController(tabBarController, animated: true)
+        
+        self.window.rootViewController = tabBarController
+        self.window.makeKeyAndVisible()
+        
     }
     
-}
-
-class ViewControllerCoordinator: Coordinator {
-    
-    let presenter: UINavigationController
-    let viewController: UIViewController
-    
-    init(presenter: UINavigationController, color: UIColor) {
-        self.presenter = presenter
-        self.viewController = UIViewController()
-        self.viewController.view.backgroundColor = color
-    }
-    
-    func start() {
-        self.presenter.pushViewController(viewController, animated: true)
-    }
 }

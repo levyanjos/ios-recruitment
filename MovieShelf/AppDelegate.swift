@@ -19,10 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let window = UIWindow(frame: UIScreen.main.bounds)
         self.window = window
         
-        let coordinator = ApplicationCoordinator(window: window)
+        let coordinator = TabBarCoordinator(window: window)
         coordinator.start()
-        
-        
+
         return true
     }
     // MARK: - Core Data stack
