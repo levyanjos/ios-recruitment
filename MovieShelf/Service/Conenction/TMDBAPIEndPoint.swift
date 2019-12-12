@@ -8,7 +8,7 @@
 
 import Foundation
 
-public enum TMDBAPIEndPoint {
+public enum TMDBApi {
     case popular(languege: Language, page: Int)
     case posterImage(posterSize: PosterSize, posterPath: String)
     
@@ -28,7 +28,7 @@ public enum TMDBAPIEndPoint {
 }
 
 //APIInformation
-extension TMDBAPIEndPoint: EndPointType {
+extension TMDBApi: EndPointType {
     var apiKey: String {
         return "8ea46276a6a27d06a97d94ccc0180d3c"
 

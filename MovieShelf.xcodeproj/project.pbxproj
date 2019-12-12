@@ -24,6 +24,7 @@
 		D78D055723A2C80A00653918 /* TMDBAPIEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78D055623A2C80A00653918 /* TMDBAPIEndPoint.swift */; };
 		D78D055923A2D51A00653918 /* NetworkProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78D055823A2D51A00653918 /* NetworkProtocol.swift */; };
 		D78D055B23A2D56A00653918 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78D055A23A2D56A00653918 /* Request.swift */; };
+		D78D055E23A2DE9500653918 /* TopMovies.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78D055D23A2DE9500653918 /* TopMovies.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		D78D055623A2C80A00653918 /* TMDBAPIEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBAPIEndPoint.swift; sourceTree = "<group>"; };
 		D78D055823A2D51A00653918 /* NetworkProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProtocol.swift; sourceTree = "<group>"; };
 		D78D055A23A2D56A00653918 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		D78D055D23A2DE9500653918 /* TopMovies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopMovies.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +178,7 @@
 		D78D052B23A2765400653918 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D78D055C23A2DD9100653918 /* TopMovies */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -249,6 +252,14 @@
 				D78D055A23A2D56A00653918 /* Request.swift */,
 			);
 			path = EndPoint;
+			sourceTree = "<group>";
+		};
+		D78D055C23A2DD9100653918 /* TopMovies */ = {
+			isa = PBXGroup;
+			children = (
+				D78D055D23A2DE9500653918 /* TopMovies.swift */,
+			);
+			path = TopMovies;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -404,6 +415,7 @@
 			files = (
 				D78D053A23A2821600653918 /* SearchViewControllerCoordinator.swift in Sources */,
 				D78D055B23A2D56A00653918 /* Request.swift in Sources */,
+				D78D055E23A2DE9500653918 /* TopMovies.swift in Sources */,
 				D78D053823A2820500653918 /* MoviesViewControllerCoordinator.swift in Sources */,
 				D78D053C23A2823500653918 /* ConfigurationViewControllerCoordinator.swift in Sources */,
 				D78D055723A2C80A00653918 /* TMDBAPIEndPoint.swift in Sources */,
