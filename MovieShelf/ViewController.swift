@@ -8,13 +8,24 @@
 
 import UIKit
 
+
+protocol AddDelegate {
+    func add()
+}
+
 class ViewController: UIViewController {
 
+    var delegate: AtalhoDelegate!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        let button = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(self.add))
+        self.navigationItem.rightBarButtonItem = button
     }
 
+    @objc func add() {
+        delegate.add()
+    }
 
 }
 
