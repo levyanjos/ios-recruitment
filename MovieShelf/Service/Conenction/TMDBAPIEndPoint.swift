@@ -30,27 +30,23 @@ public enum TMDBAPIEndPoint {
 //APIInformation
 extension TMDBAPIEndPoint: EndPointType {
     var apiKey: String {
-        get {
-            return "8ea46276a6a27d06a97d94ccc0180d3c"
-        }
+        return "8ea46276a6a27d06a97d94ccc0180d3c"
+
     }
     
     var apiAdress: String {
-        get {
-            return "https://api.themoviedb.org/3/"
-        }
+        return "https://api.themoviedb.org/3/"
+
     }
     
     var apiAdressImage: String {
-        get {
-            return "https://image.tmdb.org/t/p/"
-        }
+        return "https://image.tmdb.org/t/p/"
+
     }
     
     var url: URL {
-        get {
-            return URL(string: self.path)!
-        }
+        return URL(string: self.path)!
+    
     }
     
     var path: String {
