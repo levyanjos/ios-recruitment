@@ -15,7 +15,7 @@ protocol AddDelegate {
 
 class ViewController: UIViewController {
 
-    var delegate: AtalhoDelegate!
+    var delegate: AddDelegate!
     
     override func viewDidLoad() {
         super.viewDidLoad()

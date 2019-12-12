@@ -20,6 +20,8 @@
 		D78D053A23A2821600653918 /* SearchViewControllerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78D053923A2821600653918 /* SearchViewControllerCoordinator.swift */; };
 		D78D053C23A2823500653918 /* ConfigurationViewControllerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78D053B23A2823500653918 /* ConfigurationViewControllerCoordinator.swift */; };
 		D78D053F23A2AD7100653918 /* MovieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78D053E23A2AD7100653918 /* MovieView.swift */; };
+		D78D055523A2C76B00653918 /* NetworkEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78D055423A2C76B00653918 /* NetworkEndPoint.swift */; };
+		D78D055723A2C80A00653918 /* TMDBAPIEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78D055623A2C80A00653918 /* TMDBAPIEndPoint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,8 @@
 		D78D053923A2821600653918 /* SearchViewControllerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewControllerCoordinator.swift; sourceTree = "<group>"; };
 		D78D053B23A2823500653918 /* ConfigurationViewControllerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationViewControllerCoordinator.swift; sourceTree = "<group>"; };
 		D78D053E23A2AD7100653918 /* MovieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieView.swift; sourceTree = "<group>"; };
+		D78D055423A2C76B00653918 /* NetworkEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkEndPoint.swift; sourceTree = "<group>"; };
+		D78D055623A2C80A00653918 /* TMDBAPIEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBAPIEndPoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +113,7 @@
 		D7161BBA23A1567A00951262 /* MovieShelf */ = {
 			isa = PBXGroup;
 			children = (
+				D78D055123A2C6E200653918 /* Service */,
 				D78D052C23A2766D00653918 /* Coordinators */,
 				D78D052B23A2765400653918 /* Model */,
 				D7161BF123A273F000951262 /* ViewModel */,
@@ -213,6 +218,31 @@
 				D78D053E23A2AD7100653918 /* MovieView.swift */,
 			);
 			path = Movies;
+			sourceTree = "<group>";
+		};
+		D78D055123A2C6E200653918 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				D78D055323A2C73900653918 /* EndPoint */,
+				D78D055223A2C72B00653918 /* Conenction */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		D78D055223A2C72B00653918 /* Conenction */ = {
+			isa = PBXGroup;
+			children = (
+				D78D055423A2C76B00653918 /* NetworkEndPoint.swift */,
+				D78D055623A2C80A00653918 /* TMDBAPIEndPoint.swift */,
+			);
+			path = Conenction;
+			sourceTree = "<group>";
+		};
+		D78D055323A2C73900653918 /* EndPoint */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = EndPoint;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -369,12 +399,14 @@
 				D78D053A23A2821600653918 /* SearchViewControllerCoordinator.swift in Sources */,
 				D78D053823A2820500653918 /* MoviesViewControllerCoordinator.swift in Sources */,
 				D78D053C23A2823500653918 /* ConfigurationViewControllerCoordinator.swift in Sources */,
+				D78D055723A2C80A00653918 /* TMDBAPIEndPoint.swift in Sources */,
 				D78D052E23A276DE00653918 /* Coordinator.swift in Sources */,
 				D78D053F23A2AD7100653918 /* MovieView.swift in Sources */,
 				D78D053223A27BCF00653918 /* TabBarCoordinator.swift in Sources */,
 				D7161BC023A1567A00951262 /* ViewController.swift in Sources */,
 				D7161BC623A1567A00951262 /* MovieShelf.xcdatamodeld in Sources */,
 				D7161BBC23A1567A00951262 /* AppDelegate.swift in Sources */,
+				D78D055523A2C76B00653918 /* NetworkEndPoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
