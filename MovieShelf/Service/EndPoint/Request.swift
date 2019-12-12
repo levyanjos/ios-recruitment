@@ -12,7 +12,7 @@ class Request<T: EndPointType>: NetworkProtocol {
     
     private var task: URLSessionTask?
     
-    func run<U: Decodable>(_ endPoint: T, completion: @escaping (U?, Errors?) -> Void) {
+    func run<U: Decodable>(_ endPoint: T, completion: @escaping (Result<U, Errors>) -> Void) {
         let session = URLSession.shared
         
         var request = URLRequest(url: endPoint.url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 30.0)
@@ -21,18 +21,18 @@ class Request<T: EndPointType>: NetworkProtocol {
         self.task = session.dataTask(with: request, completionHandler: { (data, _, error) in
             guard let responseData = data, error == nil else {
                 print("Request Error:", error!.localizedDescription)
-                return DispatchQueue.main.async {completion(nil, Errors.failRequest)}
+                return DispatchQueue.main.async {completion(.failure(Errors.failRequest))}
             }
             
             do {
                 let decodeObject = try JSONDecoder().decode(U.self, from: responseData)
                 
                 DispatchQueue.main.async {
-                    completion(decodeObject, nil)
+                    completion(.success(decodeObject))
                 }
             } catch {
                 print("Decoding error:", error)
-                DispatchQueue.main.async {completion(nil, Errors.failRequest)}
+                DispatchQueue.main.async {completion(.failure(Errors.failRequest))}
             }
         })
         

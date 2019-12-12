@@ -11,6 +11,6 @@ import Foundation
 protocol NetworkProtocol {
     
     associatedtype EndPoint: EndPointType
-    func run<T: Decodable>(_ route: EndPoint, completion: @escaping (T?, Errors?) -> (Void))
+    func run<T: Decodable>(_ route: EndPoint, completion: @escaping (Result<T, Errors>) -> (Void))
     func cancel()
 }
