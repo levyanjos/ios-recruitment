@@ -19,6 +19,7 @@
 		D78D053823A2820500653918 /* MoviesViewControllerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78D053723A2820500653918 /* MoviesViewControllerCoordinator.swift */; };
 		D78D053A23A2821600653918 /* SearchViewControllerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78D053923A2821600653918 /* SearchViewControllerCoordinator.swift */; };
 		D78D053C23A2823500653918 /* ConfigurationViewControllerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78D053B23A2823500653918 /* ConfigurationViewControllerCoordinator.swift */; };
+		D78D053F23A2AD7100653918 /* MovieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78D053E23A2AD7100653918 /* MovieView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		D78D053723A2820500653918 /* MoviesViewControllerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesViewControllerCoordinator.swift; sourceTree = "<group>"; };
 		D78D053923A2821600653918 /* SearchViewControllerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewControllerCoordinator.swift; sourceTree = "<group>"; };
 		D78D053B23A2823500653918 /* ConfigurationViewControllerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationViewControllerCoordinator.swift; sourceTree = "<group>"; };
+		D78D053E23A2AD7100653918 /* MovieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 		D7161BF023A273EA00951262 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D78D053D23A2ACE100653918 /* Movies */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -202,6 +205,14 @@
 				D78D053B23A2823500653918 /* ConfigurationViewControllerCoordinator.swift */,
 			);
 			path = Configuration;
+			sourceTree = "<group>";
+		};
+		D78D053D23A2ACE100653918 /* Movies */ = {
+			isa = PBXGroup;
+			children = (
+				D78D053E23A2AD7100653918 /* MovieView.swift */,
+			);
+			path = Movies;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -359,6 +370,7 @@
 				D78D053823A2820500653918 /* MoviesViewControllerCoordinator.swift in Sources */,
 				D78D053C23A2823500653918 /* ConfigurationViewControllerCoordinator.swift in Sources */,
 				D78D052E23A276DE00653918 /* Coordinator.swift in Sources */,
+				D78D053F23A2AD7100653918 /* MovieView.swift in Sources */,
 				D78D053223A27BCF00653918 /* TabBarCoordinator.swift in Sources */,
 				D7161BC023A1567A00951262 /* ViewController.swift in Sources */,
 				D7161BC623A1567A00951262 /* MovieShelf.xcdatamodeld in Sources */,
