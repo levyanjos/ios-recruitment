@@ -13,14 +13,15 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var coordinator: TabBarCoordinator?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         let window = UIWindow(frame: UIScreen.main.bounds)
         self.window = window
         
-        let coordinator = TabBarCoordinator(window: window)
-        coordinator.start()
+        coordinator = TabBarCoordinator(window: window)
+        coordinator?.start()
 
         return true
     }
