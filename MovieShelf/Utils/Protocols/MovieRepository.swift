@@ -6,18 +6,22 @@
 //  Copyright © 2019 Levy Cristian. All rights reserved.
 //
 
-import Foundation
-
+import UIKit
 
 protocol MovieRemoteDataSource {
-    static func getTopMovies(page: Int, completion: @escaping (Result<[Movie], Errors>) -> (Void))
+    static func getTopMovies(page: Int,
+                             completion: @escaping (Result<[Movie], Errors>) -> Void)
+    
+    static func downloadImage(postSize: TMDBApi.PosterSize,
+                              posterPath: String,
+                              completion: @escaping (Result<UIImage?, Error>) -> Void)
 }
 
 public struct MovieRepository: MovieRemoteDataSource {
     
     public init() {}
     
-    static func getTopMovies(page: Int, completion: @escaping (Result<[Movie], Errors>) -> (Void)) {
+    static func getTopMovies(page: Int, completion: @escaping (Result<[Movie], Errors>) -> Void) {
         let request = Request<TMDBApi>()
         request.run(TMDBApi.popularMovies(languege: .pt, page: page)) { (result: Result<TopMovies, Errors>) in
             switch result {
@@ -28,5 +32,19 @@ public struct MovieRepository: MovieRemoteDataSource {
             }
         }
     }
-   
+    
+    static func downloadImage(postSize: TMDBApi.PosterSize,
+                              posterPath: String,
+                              completion: @escaping (Result<UIImage?, Error>) -> Void) {
+        let request = Request<TMDBApi>()
+        request.run(TMDBApi.posterImage(posterSize: postSize, posterPath: posterPath)) { (result: Result<Data, Error>) in
+            switch result {
+            case .success(let data):
+                completion(.success(UIImage(data: data)))
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
+    
 }

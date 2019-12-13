@@ -41,8 +41,8 @@ class MoviesViewModel {
     }
     
     func loadMovies(page: Int?) {
-        MovieRepository.getTopMovies(page: page ?? currentPage) { (result: Result<[Movie], Errors>) -> (Void) in
-            switch result{
+        MovieRepository.getTopMovies(page: page ?? currentPage) { (result: Result<[Movie], Errors>) -> Void in
+            switch result {
             case .success(let movies):
                 let newMoviews = movies.map { MovieCellViewModel(movie: $0)}
                 self.moviesCellViewModels.append(contentsOf: newMoviews)

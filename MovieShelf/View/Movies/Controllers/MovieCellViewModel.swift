@@ -29,12 +29,11 @@ class MovieCellViewModel {
     }
 
     func downloadImage(imageClosure: @escaping ImageBindingClosure) {
-        let request = Request<TMDBApi>()
-        request.run(.posterImage(posterSize: TMDBApi.PosterSize.w92, posterPath: movie.posterPath)) { (result: Result<Data, Errors>) in
+        MovieRepository.downloadImage(postSize: .w154, posterPath: movie.posterPath) { (result: Result<UIImage?, Error>) in
             switch result {
-            case .success(let data):
+            case .success(let image):
                 DispatchQueue.main.async {
-                    imageClosure(UIImage(data: data))
+                    imageClosure(image)
                 }
             case .failure(_):
                 DispatchQueue.main.async {
