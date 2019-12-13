@@ -21,6 +21,8 @@ class MoviesViewModel {
     // MARK: - Variables
     private let movies: [Movie]
     
+    var currentPage = 1
+    
     var moviesCellViewModels = [MovieCellViewModel]() {
            didSet {
                self.reloadCollectionClosure?()
@@ -38,17 +40,17 @@ class MoviesViewModel {
         self.moviesCellViewModels = movies.map { MovieCellViewModel(movie: $0) }
     }
     
-    func loadMovies(page: Int) {
-        let request = Request<TMDBApi>()
-        request.run(TMDBApi.popularMovies(languege: .pt, page: page)) { (result: Result<TopMovies, Errors>) in
-            switch result {
-            case .success(let topMovies):
-                let newMoviews = topMovies.results.map { MovieCellViewModel(movie: $0)}
+    func loadMovies(page: Int?) {
+        MovieRepository.getTopMovies(page: page ?? currentPage) { (result: Result<[Movie], Errors>) -> (Void) in
+            switch result{
+            case .success(let movies):
+                let newMoviews = movies.map { MovieCellViewModel(movie: $0)}
                 self.moviesCellViewModels.append(contentsOf: newMoviews)
             case .failure(let error):
                 self.errorLoadingDataClosure?(error)
             }
         }
+        
     }
     
 }
