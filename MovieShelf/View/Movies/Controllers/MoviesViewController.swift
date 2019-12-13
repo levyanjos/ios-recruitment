@@ -9,22 +9,44 @@
 import UIKit
 
 class MoviesViewController: UIViewController {
-
+    
+    // MARK: - ViewModel
+    var viewModel: MoviesViewModel = MoviesViewModel()
+    
+    // MARK: - UI Variable
+    
+    private lazy var moviesView: MoviesView = {
+        let view = MoviesView()
+        view.collectionView.delegate = self
+        view.collectionView.dataSource = self
+        return view
+    }()
+    
+    // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.view = moviesView
+        
     }
     
+}
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+extension MoviesViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return viewModel.numberOfCells
     }
-    */
-
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cellViewModel = viewModel.moviesCellViewModels[indexPath.row]
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MovieCollectionViewCell.reuseIdentifier,
+                                                            for: indexPath) as? MovieCollectionViewCell else {
+                   return UICollectionViewCell()
+               }
+        cell.labelName.text = cellViewModel.name
+        
+        return
+        
+    }
+    
+    
 }

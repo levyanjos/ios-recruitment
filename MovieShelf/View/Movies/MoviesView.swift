@@ -14,6 +14,7 @@ class MoviesView: UIView {
         let flowLayout = UICollectionViewFlowLayout()
         let collection = UICollectionView(frame: CGRect.zero, collectionViewLayout: flowLayout)
         collection.translatesAutoresizingMaskIntoConstraints = false
+        collection.register(MovieCollectionViewCell.self, forCellWithReuseIdentifier: MovieCollectionViewCell.reuseIdentifier)
         return collection
     }()
     

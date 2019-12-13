@@ -13,7 +13,6 @@ class MoviesViewModel {
     // MARK: - TypeAlias
     typealias BindingClosure = () -> Void
     typealias ErrorClouser = (Error) -> Void
-    //typealias BooleanClosure = (Bool) -> Void
     
     // MARK: - Closures
     var reloadCollectionClosure: BindingClosure?
@@ -32,7 +31,7 @@ class MoviesViewModel {
         return moviesCellViewModels.count
     }
     
-    // MARK: - Init
+    // MARK: - Init & Functions
     init(movies: [Movie] = [Movie]()) {
         self.movies = movies
         

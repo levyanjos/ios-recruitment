@@ -11,20 +11,37 @@ import UIKit
 class MovieCellViewModel {
     
     // MARK: - TypeAlias
-    //typealias ImageBindingClosure = (UIImage?) -> Void
-    
+    typealias ImageBindingClosure = (UIImage?) -> Void
+   
+    // MARK: - Variales
     private var movie: Movie
+    var name: String {
+           return movie.title
+       }
+       
+       var image: UIImage? {
+           return movie.image
+       }
     
+    // MARK: - init & Functions
     init(movie: Movie) {
         self.movie = movie
     }
 
-    var name: String {
-        return movie.title
-    }
-    
-    var image: UIImage? {
-        return movie.image
+    func downloadImage(imageClosure: @escaping ImageBindingClosure) {
+        let request = Request<TMDBApi>()
+        request.run(.posterImage(posterSize: TMDBApi.PosterSize.w92, posterPath: movie.posterPath)) { (result: Result<Data, Errors>) in
+            switch result {
+            case .success(let data):
+                DispatchQueue.main.async {
+                    imageClosure(UIImage(data: data))
+                }
+            case .failure(_):
+                DispatchQueue.main.async {
+                    imageClosure(UIImage(named: "error"))
+                }
+            }
+        }
     }
     
 }
