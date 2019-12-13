@@ -12,7 +12,9 @@ class MoviesView: UIView {
 
     private(set) lazy var collectionView: UICollectionView = {
         let flowLayout = UICollectionViewFlowLayout()
+        flowLayout.scrollDirection = .vertical
         let collection = UICollectionView(frame: CGRect.zero, collectionViewLayout: flowLayout)
+        collection.backgroundColor = .clear
         collection.translatesAutoresizingMaskIntoConstraints = false
         collection.register(MovieCollectionViewCell.self, forCellWithReuseIdentifier: MovieCollectionViewCell.reuseIdentifier)
         return collection
@@ -20,10 +22,13 @@ class MoviesView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        self.setupView()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+        self.setupView()
+
     }
     
 }
@@ -43,6 +48,6 @@ extension MoviesView: ViewCode {
     }
     
     func setupAdditionalConfigurantion() {
-        
+        backgroundColor = .white
     }
 }
