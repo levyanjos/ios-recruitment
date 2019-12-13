@@ -6,12 +6,12 @@
 //  Copyright © 2019 Levy Cristian. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 // MARK: - TopMovies
 struct TopMovies: Codable {
     let page, totalResults, totalPages: Int
-    let results: [Response]
+    let results: [Movie]
 
     enum CodingKeys: String, CodingKey {
         case page
@@ -22,11 +22,12 @@ struct TopMovies: Codable {
 }
 
 // MARK: - Result
-struct Response: Codable {
+struct Movie: Codable {
     let posterPath: String
     let id: Int
     let title: String
     let overview: String
+    var image = UIImage()
 
     enum CodingKeys: String, CodingKey {
         case posterPath = "poster_path"
