@@ -38,10 +38,23 @@ class Request<T: EndPointType>: NetworkProtocol {
         
         self.task?.resume()
     }
-        
+    
+    func run(_ endPoint: T, completion: @escaping (Result<Data, Error>) -> Void) {
+        let dataTask = URLSession.shared.dataTask(with: endPoint.url) { (data, _, error) in
+          guard let data = data else {
+            return completion(.failure(error!))
+          }
+          DispatchQueue.main.async {
+            completion(.success(data))
+          }
+      }
+      dataTask.resume()
+    }
+    
     func cancel() {
         self.task?.cancel()
     }
+    
 }
 
 enum Errors: Error {
