@@ -30,6 +30,7 @@
 		D78D056823A30EBD00653918 /* MoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78D056723A30EBD00653918 /* MoviesViewController.swift */; };
 		D78D056A23A30F8E00653918 /* MoviesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78D056923A30F8E00653918 /* MoviesViewModel.swift */; };
 		D78D056C23A30FA500653918 /* MovieCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78D056B23A30FA500653918 /* MovieCellViewModel.swift */; };
+		D78D056E23A318F500653918 /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78D056D23A318F500653918 /* Identifiable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		D78D056723A30EBD00653918 /* MoviesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesViewController.swift; sourceTree = "<group>"; };
 		D78D056923A30F8E00653918 /* MoviesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MoviesViewModel.swift; path = MovieShelf/View/Movies/Controllers/MoviesViewModel.swift; sourceTree = SOURCE_ROOT; };
 		D78D056B23A30FA500653918 /* MovieCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MovieCellViewModel.swift; path = MovieShelf/View/Movies/Controllers/MovieCellViewModel.swift; sourceTree = SOURCE_ROOT; };
+		D78D056D23A318F500653918 /* Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -289,6 +291,7 @@
 			isa = PBXGroup;
 			children = (
 				D78D056323A30AF300653918 /* ViewCode.swift */,
+				D78D056D23A318F500653918 /* Identifiable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -457,6 +460,7 @@
 				D7161BC023A1567A00951262 /* ViewController.swift in Sources */,
 				D78D055923A2D51A00653918 /* NetworkProtocol.swift in Sources */,
 				D78D056423A30AF300653918 /* ViewCode.swift in Sources */,
+				D78D056E23A318F500653918 /* Identifiable.swift in Sources */,
 				D7161BC623A1567A00951262 /* MovieShelf.xcdatamodeld in Sources */,
 				D78D056A23A30F8E00653918 /* MoviesViewModel.swift in Sources */,
 				D7161BBC23A1567A00951262 /* AppDelegate.swift in Sources */,
