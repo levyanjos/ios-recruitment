@@ -10,12 +10,38 @@ import UIKit
 
 class MovieView: UIView {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    private(set) lazy var collectionView: UICollectionView = {
+        let flowLayout = UICollectionViewFlowLayout()
+        let collection = UICollectionView(frame: CGRect.zero, collectionViewLayout: flowLayout)
+        collection.translatesAutoresizingMaskIntoConstraints = false
+        return collection
+    }()
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
     }
-    */
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
+    
+}
 
+extension MovieView: ViewCode {
+    func buildViewHierarchy() {
+        addSubview(collectionView)
+    }
+    
+    func setupConstraints() {
+        NSLayoutConstraint.activate([
+            collectionView.topAnchor.constraint(equalTo: topAnchor),
+            collectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: bottomAnchor)
+        ])
+    }
+    
+    func setupAdditionalConfigurantion() {
+        
+    }
 }
