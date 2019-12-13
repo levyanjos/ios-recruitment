@@ -1,6 +1,6 @@
 //
 //  MovieView.swift
-//  MovieShelf
+//  MoviesShelf
 //
 //  Created by Levy Cristian on 12/12/19.
 //  Copyright © 2019 Levy Cristian. All rights reserved.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MovieView: UIView {
+class MoviesView: UIView {
 
     private(set) lazy var collectionView: UICollectionView = {
         let flowLayout = UICollectionViewFlowLayout()
@@ -27,7 +27,7 @@ class MovieView: UIView {
     
 }
 
-extension MovieView: ViewCode {
+extension MoviesView: ViewCode {
     func buildViewHierarchy() {
         addSubview(collectionView)
     }
