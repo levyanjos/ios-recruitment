@@ -18,8 +18,10 @@ class MoviesViewModel {
     var reloadCollectionClosure: BindingClosure?
     var errorLoadingDataClosure: ErrorClouser?
     
+    var pushDetailsClosure: ((Movie) -> Void)?
+    
     // MARK: - Variables
-    private let movies: [Movie]
+    private var movies: [Movie]
     
     var currentPage = 1
     
@@ -46,6 +48,7 @@ class MoviesViewModel {
             case .success(let movies):
                 let newMoviews = movies.map { MovieCellViewModel(movie: $0)}
                 self.moviesCellViewModels.append(contentsOf: newMoviews)
+                self.movies.append(contentsOf: movies)
             case .failure(let error):
                 self.errorLoadingDataClosure?(error)
             }
@@ -53,4 +56,8 @@ class MoviesViewModel {
         
     }
     
+    func cellWasTapped(atPosition position: Int) {
+        let movie = self.movies[position]
+        pushDetailsClosure?(movie)
+    }
 }

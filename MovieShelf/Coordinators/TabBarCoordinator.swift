@@ -41,7 +41,6 @@ class TabBarCoordinator: Coordinator {
         
         self.window.rootViewController = tabBarController
         self.window.makeKeyAndVisible()
-        
     }
     
 }

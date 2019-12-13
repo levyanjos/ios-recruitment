@@ -12,7 +12,7 @@ class MovieCellViewModel {
     
     // MARK: - TypeAlias
     typealias ImageBindingClosure = (UIImage?) -> Void
-   
+
     // MARK: - Variales
     private var movie: Movie
     var name: String {

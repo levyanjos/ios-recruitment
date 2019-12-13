@@ -11,11 +11,16 @@ import UIKit
 class MoviesViewControllerCoordinator: Coordinator {
     
     let presenter: UINavigationController
-    let viewController: UIViewController
+    let viewController: MoviesViewController
+    var coordinatorDetails: MovieDetailsViewCoodinator?
     
     init(presenter: UINavigationController) {
         self.presenter = presenter
         self.viewController = MoviesViewController()
+        self.viewController.viewModel.pushDetailsClosure = { [weak self] (movie) in
+            self?.coordinatorDetails = MovieDetailsViewCoodinator(presenter: presenter, movie: movie)
+            self?.coordinatorDetails?.start()
+        }
     }
     
     func start() {

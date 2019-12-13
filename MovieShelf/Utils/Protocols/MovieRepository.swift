@@ -23,7 +23,7 @@ public struct MovieRepository: MovieRemoteDataSource {
     
     static func getTopMovies(page: Int, completion: @escaping (Result<[Movie], Errors>) -> Void) {
         let request = Request<TMDBApi>()
-        request.run(TMDBApi.popularMovies(languege: .pt, page: page)) { (result: Result<TopMovies, Errors>) in
+        request.run(TMDBApi.popularMovies(language: .pt, page: page)) { (result: Result<TopMovies, Errors>) in
             switch result {
             case .success(let topMovies):
                 return completion(.success(topMovies.results))

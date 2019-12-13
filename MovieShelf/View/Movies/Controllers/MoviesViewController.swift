@@ -12,6 +12,7 @@ class MoviesViewController: UIViewController {
     
     // MARK: - ViewModel
     var viewModel: MoviesViewModel = MoviesViewModel()
+//    var coordinator:
     
     // MARK: - UI Variable
     
@@ -79,5 +80,9 @@ extension MoviesViewController: UICollectionViewDelegate, UICollectionViewDataSo
             viewModel.currentPage+=1
             viewModel.loadMovies(page: nil)
         }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        viewModel.cellWasTapped(atPosition: indexPath.row)
     }
 }
