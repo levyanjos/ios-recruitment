@@ -19,7 +19,7 @@ protocol MovieRemoteDataSource {
 
 public struct MovieRepository: MovieRemoteDataSource {
     
-    public init() {}
+    private init() {}
     
     static func getTopMovies(page: Int, completion: @escaping (Result<[Movie], Errors>) -> Void) {
         let request = Request<TMDBApi>()
