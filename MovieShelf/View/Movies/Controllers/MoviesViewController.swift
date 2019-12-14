@@ -12,7 +12,6 @@ class MoviesViewController: UIViewController {
     
     // MARK: - ViewModel
     var viewModel: MoviesViewModel = MoviesViewModel()
-//    var coordinator:
     
     // MARK: - UI Variable
     
