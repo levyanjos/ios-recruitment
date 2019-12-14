@@ -1,5 +1,5 @@
 //
-//  HeaderView.swift
+//  PosterView.swift
 //  MovieShelf
 //
 //  Created by Levy Cristian on 13/12/19.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HeaderView: UIView {
+class PosterView: UIView {
 
      lazy var imageView: UIImageView = {
         let image = UIImageView()
@@ -30,7 +30,7 @@ class HeaderView: UIView {
     
 }
 
-extension HeaderView: ViewCode {
+extension PosterView: ViewCode {
     func buildViewHierarchy() {
         addSubview(imageView)
     }
@@ -48,3 +48,4 @@ extension HeaderView: ViewCode {
         
     }
 }
+
