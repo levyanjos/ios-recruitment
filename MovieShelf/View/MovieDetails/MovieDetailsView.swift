@@ -17,15 +17,16 @@ class MovieDetailsView: UIView {
         tableView.tableFooterView = UIView()
         tableView.separatorStyle = .none
         tableView.allowsSelection = false
-        tableView.register(DescripitonTableViewCell.self, forCellReuseIdentifier: DescripitonTableViewCell.reuseIdentifier)
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 600
+        tableView.register(DescripitonTableViewCell.self, forCellReuseIdentifier: DescripitonTableViewCell.reuseIdentifier)
+        tableView.register(RecommendationCollectionViewCell.self, forCellReuseIdentifier: RecommendationCollectionViewCell.reuseIdentifier)
         return tableView
     }()
     
-    private(set) lazy var headerView: HeaderView = {
+    private(set) lazy var headerView: PosterView = {
         let rect = CGRect(x: 0.0, y: 0.0, width: self.frame.width, height: 0.0)
-        let headerView = HeaderView(frame: rect)
+        let headerView = PosterView(frame: rect)
         return headerView
     }()
         
