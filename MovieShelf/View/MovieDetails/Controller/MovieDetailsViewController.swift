@@ -43,8 +43,13 @@ class MovieDetailsViewController: UIViewController {
 }
 
 extension MovieDetailsViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 2
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -59,6 +64,11 @@ extension MovieDetailsViewController: UITableViewDelegate, UITableViewDataSource
         return 30
     }
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Description"
+        if section == 0 {
+            return "Descrição"
+            
+        } else {
+            return "Recomendações"
+        }
     }
 }

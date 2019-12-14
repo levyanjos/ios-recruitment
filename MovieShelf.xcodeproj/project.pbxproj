@@ -197,6 +197,15 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		D74B279023A5A55400599982 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				D78D058423A4260E00653918 /* HeaderView.swift */,
+				D74B278C23A5986C00599982 /* DescripitonTableViewCell.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
 		D78D052B23A2765400653918 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -341,10 +350,9 @@
 		D78D057C23A4166B00653918 /* MovieDetails */ = {
 			isa = PBXGroup;
 			children = (
+				D74B279023A5A55400599982 /* TableView */,
 				D78D057D23A4167700653918 /* Controller */,
 				D78D058123A4207500653918 /* MovieDetailsView.swift */,
-				D78D058423A4260E00653918 /* HeaderView.swift */,
-				D74B278C23A5986C00599982 /* DescripitonTableViewCell.swift */,
 			);
 			path = MovieDetails;
 			sourceTree = "<group>";
