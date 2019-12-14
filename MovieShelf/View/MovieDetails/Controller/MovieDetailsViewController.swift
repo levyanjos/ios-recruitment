@@ -9,8 +9,19 @@
 import UIKit
 
 class MovieDetailsViewController: UIViewController {
-
+    // MARK: - ViewModel
     var viewModel: MovieDetailsViewModel
+    
+    // MARK: - UI Variable
+    
+    private lazy var movieDetailsView: MovieDetailsView = {
+        let view = MovieDetailsView()
+        view.tableView.delegate = self
+        view.tableView.dataSource = self
+        return view
+    }()
+    
+    // MARK: - LifeCycle
     
     init(viewModel: MovieDetailsViewModel) {
         self.viewModel = viewModel
@@ -22,20 +33,32 @@ class MovieDetailsViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .blue
-        // Do any additional setup after loading the view.
+        self.view = movieDetailsView
+        movieDetailsView.headerView.imageView.image = viewModel.image
+    }
+
+}
+
+extension MovieDetailsViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 2
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: DescripitonTableViewCell.reuseIdentifier,
+                                                       for: indexPath) as? DescripitonTableViewCell
+            else { return UITableViewCell() }
+        cell.descriptionLabel.text = viewModel.overview
+        return cell
     }
-    */
-
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 30
+    }
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Description"
+    }
 }
