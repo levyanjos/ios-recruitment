@@ -57,7 +57,9 @@ class MoviesViewModel {
     }
     
     func cellWasTapped(atPosition position: Int) {
-        let movie = self.movies[position]
+        let cellViewModel = self.moviesCellViewModels[position]
+        var movie = self.movies[position]
+        movie.image = cellViewModel.image
         pushDetailsClosure?(movie)
     }
 }

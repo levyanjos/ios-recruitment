@@ -6,12 +6,19 @@
 //  Copyright © 2019 Levy Cristian. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-
-class MovieDetailsViewModel  {
+class MovieDetailsViewModel {
     
     private let movie: Movie
+    
+    var overview: String {
+        return movie.overview
+    }
+    
+    var image: UIImage? {
+        return movie.image
+    }
     
     init(movie: Movie) {
         self.movie = movie

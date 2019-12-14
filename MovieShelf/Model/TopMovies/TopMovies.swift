@@ -27,7 +27,7 @@ struct Movie: Codable {
     let id: Int
     let title: String
     let overview: String
-    var image = UIImage()
+    var image: UIImage? = UIImage()
 
     enum CodingKeys: String, CodingKey {
         case posterPath = "poster_path"

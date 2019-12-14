@@ -15,13 +15,14 @@ class MovieCellViewModel {
 
     // MARK: - Variales
     private var movie: Movie
+    
     var name: String {
-           return movie.title
-       }
+        return movie.title
+    }
        
-       var image: UIImage? {
-           return movie.image
-       }
+    var image: UIImage? {
+        return movie.image
+    }
     
     // MARK: - init & Functions
     init(movie: Movie) {
@@ -29,10 +30,11 @@ class MovieCellViewModel {
     }
 
     func downloadImage(imageClosure: @escaping ImageBindingClosure) {
-        MovieRepository.downloadImage(postSize: .w154, posterPath: movie.posterPath) { (result: Result<UIImage?, Error>) in
+        MovieRepository.downloadImage(postSize: .w780, posterPath: movie.posterPath) { (result: Result<UIImage?, Error>) in
             switch result {
             case .success(let image):
                 DispatchQueue.main.async {
+                    self.movie.image = image
                     imageClosure(image)
                 }
             case .failure(_):
