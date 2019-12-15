@@ -63,7 +63,8 @@ extension TMDBApi: EndPointType {
             return self.apiAdress + "movie/\(movieID)" + "/recommendations?api_key=" + apiKey + "&language=" + language.rawValue + "&page=\(page)"
         
         case .searchMovieBy(let querry, let language, let page):
-            return self.apiAdress + "search/movie?api_key=" + apiKey + "&language=" + language.rawValue + "&query=" + querry + "&page=\(page)"
+            let newQuerry = querry.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
+            return self.apiAdress + "search/movie?api_key=" + apiKey + "&language=" + language.rawValue + "&query=" + newQuerry!.lowercased() + "&page=\(page)"
         }
     }
 }
