@@ -20,4 +20,4 @@ extension Identifiable {
 
 extension UITableViewCell: Identifiable {}
 
-extension UICollectionViewCell: Identifiable {}
+extension UICollectionReusableView: Identifiable {}

@@ -18,6 +18,10 @@
 		D74B279523A5A75E00599982 /* RecommendationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74B279423A5A75E00599982 /* RecommendationCollectionViewCell.swift */; };
 		D74B279723A5A8AB00599982 /* PosterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74B279623A5A8AB00599982 /* PosterView.swift */; };
 		D74B279D23A5CFB200599982 /* RecommendationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74B279C23A5CFB200599982 /* RecommendationTableViewCell.swift */; };
+		D74B27A123A6564D00599982 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74B27A023A6564D00599982 /* SearchViewController.swift */; };
+		D74B27A323A657AD00599982 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74B27A223A657AD00599982 /* SearchView.swift */; };
+		D74B27A523A662DC00599982 /* UISearchController+MovieShelf.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74B27A423A662DC00599982 /* UISearchController+MovieShelf.swift */; };
+		D74B27AA23A6772700599982 /* SearchBarCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74B27A923A6772700599982 /* SearchBarCollectionReusableView.swift */; };
 		D78D052E23A276DE00653918 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78D052D23A276DE00653918 /* Coordinator.swift */; };
 		D78D053223A27BCF00653918 /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78D053123A27BCF00653918 /* TabBarCoordinator.swift */; };
 		D78D053823A2820500653918 /* MoviesViewControllerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78D053723A2820500653918 /* MoviesViewControllerCoordinator.swift */; };
@@ -77,6 +81,10 @@
 		D74B279423A5A75E00599982 /* RecommendationCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationCollectionViewCell.swift; sourceTree = "<group>"; };
 		D74B279623A5A8AB00599982 /* PosterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterView.swift; sourceTree = "<group>"; };
 		D74B279C23A5CFB200599982 /* RecommendationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationTableViewCell.swift; sourceTree = "<group>"; };
+		D74B27A023A6564D00599982 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		D74B27A223A657AD00599982 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		D74B27A423A662DC00599982 /* UISearchController+MovieShelf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISearchController+MovieShelf.swift"; sourceTree = "<group>"; };
+		D74B27A923A6772700599982 /* SearchBarCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarCollectionReusableView.swift; sourceTree = "<group>"; };
 		D78D052D23A276DE00653918 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		D78D053123A27BCF00653918 /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
 		D78D053723A2820500653918 /* MoviesViewControllerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesViewControllerCoordinator.swift; sourceTree = "<group>"; };
@@ -186,6 +194,7 @@
 		D7161BF023A273EA00951262 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D74B279E23A6560000599982 /* Search */,
 				D78D057C23A4166B00653918 /* MovieDetails */,
 				D78D053D23A2ACE100653918 /* Movies */,
 			);
@@ -216,6 +225,24 @@
 				D74B279C23A5CFB200599982 /* RecommendationTableViewCell.swift */,
 			);
 			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		D74B279E23A6560000599982 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				D74B279F23A6560A00599982 /* ViewController */,
+				D74B27A223A657AD00599982 /* SearchView.swift */,
+				D74B27A923A6772700599982 /* SearchBarCollectionReusableView.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		D74B279F23A6560A00599982 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D74B27A023A6564D00599982 /* SearchViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		D78D052B23A2765400653918 /* Model */ = {
@@ -338,6 +365,7 @@
 		D78D056F23A31D1800653918 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				D74B27A423A662DC00599982 /* UISearchController+MovieShelf.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -538,6 +566,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D74B27A123A6564D00599982 /* SearchViewController.swift in Sources */,
 				D78D053A23A2821600653918 /* SearchViewControllerCoordinator.swift in Sources */,
 				D78D055B23A2D56A00653918 /* Request.swift in Sources */,
 				D78D055E23A2DE9500653918 /* TopMovies.swift in Sources */,
@@ -548,10 +577,12 @@
 				D78D052E23A276DE00653918 /* Coordinator.swift in Sources */,
 				D74B279D23A5CFB200599982 /* RecommendationTableViewCell.swift in Sources */,
 				D78D053F23A2AD7100653918 /* MoviesView.swift in Sources */,
+				D74B27A523A662DC00599982 /* UISearchController+MovieShelf.swift in Sources */,
 				D78D057923A3D71200653918 /* MovieDetailsViewModel.swift in Sources */,
 				D78D053223A27BCF00653918 /* TabBarCoordinator.swift in Sources */,
 				D78D056C23A30FA500653918 /* MovieCellViewModel.swift in Sources */,
 				D7161BC023A1567A00951262 /* ViewController.swift in Sources */,
+				D74B27A323A657AD00599982 /* SearchView.swift in Sources */,
 				D78D057323A3C0DC00653918 /* MovieRepository.swift in Sources */,
 				D78D055923A2D51A00653918 /* NetworkProtocol.swift in Sources */,
 				D78D056423A30AF300653918 /* ViewCode.swift in Sources */,
@@ -567,6 +598,7 @@
 				D78D056623A30DC000653918 /* MovieCollectionViewCell.swift in Sources */,
 				D74B279523A5A75E00599982 /* RecommendationCollectionViewCell.swift in Sources */,
 				D78D056823A30EBD00653918 /* MoviesViewController.swift in Sources */,
+				D74B27AA23A6772700599982 /* SearchBarCollectionReusableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
