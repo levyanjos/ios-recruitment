@@ -58,7 +58,6 @@ class MoviesViewModel {
                 self.errorLoadingDataClosure?(error)
             }
         }
-        
     }
     
     func cellWasTapped(atPosition position: Int) {
