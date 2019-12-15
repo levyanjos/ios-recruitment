@@ -15,7 +15,7 @@ class RecommendationCollectionViewCell: UICollectionViewCell {
         return poster
     }()
     
-    var postImage : UIImage? {
+    var postImage: UIImage? {
         get {
             return postView.imageView.image
         }
