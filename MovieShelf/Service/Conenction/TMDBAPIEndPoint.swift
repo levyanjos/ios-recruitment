@@ -12,7 +12,7 @@ public enum TMDBApi {
     case popularMovies(language: Language, page: Int)
     case posterImage(posterSize: PosterSize, posterPath: String)
     case recommendations(movieID: Int, page: Int, language: Language)
-    case searchMovieBy(querry: String, language: Language)
+    case searchMovieBy(querry: String, language: Language, page: Int)
     
     public enum PosterSize: String {
         case w92
@@ -62,8 +62,8 @@ extension TMDBApi: EndPointType {
         case .recommendations(let movieID, let page, let language):
             return self.apiAdress + "movie/\(movieID)" + "/recommendations?api_key=" + apiKey + "&language=" + language.rawValue + "&page=\(page)"
         
-        case .searchMovieBy(let querry, let language):
-            return self.apiAdress + "search/movie?api_key=" + apiKey + "&language=" + language.rawValue + "&query=" + querry
+        case .searchMovieBy(let querry, let language, let page):
+            return self.apiAdress + "search/movie?api_key=" + apiKey + "&language=" + language.rawValue + "&query=" + querry + "&page=\(page)"
         }
     }
 }
