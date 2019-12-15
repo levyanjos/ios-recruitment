@@ -33,8 +33,14 @@ class TabBarCoordinator: Coordinator {
         searchCoordinator.start()
         
         tabBarController.viewControllers = [moviesNavigation, searchNavigation]
+        moviesNavigation.tabBarItem.image = UIImage(named: "movie")
+        searchNavigation.tabBarItem.image = UIImage(named: "search")
         self.childCoordinators = [moviesCoordinator, searchCoordinator]
         
+        tabBarController.tabBar.barTintColor = .orange
+        tabBarController.tabBar.tintColor = .white
+        tabBarController.tabBar.unselectedItemTintColor = .darkGray
+    
         self.window.rootViewController = tabBarController
         self.window.makeKeyAndVisible()
     }
