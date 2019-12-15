@@ -48,6 +48,6 @@ extension MoviesView: ViewCode {
     }
     
     func setupAdditionalConfigurantion() {
-        backgroundColor = .white
+        backgroundColor = .groupTableViewBackground
     }
 }

@@ -16,9 +16,10 @@ class MovieCollectionViewCell: UICollectionViewCell {
     }()
    
     lazy var labelName: UILabel = {
-       let label = UILabel()
-       label.translatesAutoresizingMaskIntoConstraints = false
-       return label
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 14)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
     }()
     
     override init(frame: CGRect) {
@@ -48,12 +49,13 @@ extension MovieCollectionViewCell: ViewCode {
         NSLayoutConstraint.activate([
             labelName.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 8),
             labelName.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 4),
-            labelName.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 4),
+            labelName.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -4),
             labelName.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -8)
         ])
     }
     
     func setupAdditionalConfigurantion() {
-        
+        backgroundColor = .white
+        layer.cornerRadius = 5
     }
 }

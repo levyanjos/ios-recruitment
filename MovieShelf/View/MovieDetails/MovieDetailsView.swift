@@ -27,6 +27,8 @@ class MovieDetailsView: UIView {
     private(set) lazy var headerView: PosterView = {
         let rect = CGRect(x: 0.0, y: 0.0, width: self.frame.width, height: 0.0)
         let headerView = PosterView(frame: rect)
+        headerView.imageView.contentMode = .scaleAspectFill
+        headerView.imageView.clipsToBounds = true
         return headerView
     }()
         

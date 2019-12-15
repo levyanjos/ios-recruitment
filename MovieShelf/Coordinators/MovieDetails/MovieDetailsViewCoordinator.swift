@@ -16,6 +16,8 @@ class MovieDetailsViewCoodinator: Coordinator {
     init(presenter: UINavigationController, movie: Movie) {
         self.presenter = presenter
         viewController = MovieDetailsViewController(viewModel: MovieDetailsViewModel(movie: movie))
+        viewController.title = movie.title
+        viewController.navigationItem.title = movie.title
         viewController.viewModel.pushDetailsClouser = { [weak self] movie in
             self?.coordinatorDetails = MovieDetailsViewCoodinator(presenter: presenter, movie: movie)
             self?.coordinatorDetails?.start()
