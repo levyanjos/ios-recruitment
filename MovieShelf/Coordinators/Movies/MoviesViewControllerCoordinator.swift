@@ -26,6 +26,9 @@ class MoviesViewControllerCoordinator: Coordinator {
     func start() {
         viewController.title = "Movies"
         viewController.navigationItem.title = "Movies"
+        presenter.navigationBar.barTintColor = UIColor.orange
+        presenter.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
+        presenter.navigationBar.tintColor = .white
         self.presenter.pushViewController(viewController, animated: true)
     }
 }
