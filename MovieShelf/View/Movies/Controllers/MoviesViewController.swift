@@ -65,13 +65,13 @@ extension MoviesViewController: UICollectionViewDelegate, UICollectionViewDataSo
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (collectionView.frame.width/2) - 16, height: (collectionView.frame.height/2.5) - 16)
+        return CGSize(width: (collectionView.frame.width/2) - 8, height: (collectionView.frame.height/2.2) - 16)
     }
     
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 20
+        return 8
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
