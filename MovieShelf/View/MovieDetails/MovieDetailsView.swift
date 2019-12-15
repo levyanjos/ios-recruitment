@@ -20,7 +20,7 @@ class MovieDetailsView: UIView {
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 600
         tableView.register(DescripitonTableViewCell.self, forCellReuseIdentifier: DescripitonTableViewCell.reuseIdentifier)
-        tableView.register(RecommendationCollectionViewCell.self, forCellReuseIdentifier: RecommendationCollectionViewCell.reuseIdentifier)
+        tableView.register(RecommendationTableViewCell.self, forCellReuseIdentifier: RecommendationTableViewCell.reuseIdentifier)
         return tableView
     }()
     

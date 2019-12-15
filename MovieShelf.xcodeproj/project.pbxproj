@@ -17,6 +17,7 @@
 		D74B278D23A5986C00599982 /* DescripitonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74B278C23A5986C00599982 /* DescripitonTableViewCell.swift */; };
 		D74B279523A5A75E00599982 /* RecommendationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74B279423A5A75E00599982 /* RecommendationCollectionViewCell.swift */; };
 		D74B279723A5A8AB00599982 /* PosterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74B279623A5A8AB00599982 /* PosterView.swift */; };
+		D74B279D23A5CFB200599982 /* RecommendationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74B279C23A5CFB200599982 /* RecommendationTableViewCell.swift */; };
 		D78D052E23A276DE00653918 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78D052D23A276DE00653918 /* Coordinator.swift */; };
 		D78D053223A27BCF00653918 /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78D053123A27BCF00653918 /* TabBarCoordinator.swift */; };
 		D78D053823A2820500653918 /* MoviesViewControllerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78D053723A2820500653918 /* MoviesViewControllerCoordinator.swift */; };
@@ -75,6 +76,7 @@
 		D74B278C23A5986C00599982 /* DescripitonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescripitonTableViewCell.swift; sourceTree = "<group>"; };
 		D74B279423A5A75E00599982 /* RecommendationCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationCollectionViewCell.swift; sourceTree = "<group>"; };
 		D74B279623A5A8AB00599982 /* PosterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterView.swift; sourceTree = "<group>"; };
+		D74B279C23A5CFB200599982 /* RecommendationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationTableViewCell.swift; sourceTree = "<group>"; };
 		D78D052D23A276DE00653918 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		D78D053123A27BCF00653918 /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
 		D78D053723A2820500653918 /* MoviesViewControllerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesViewControllerCoordinator.swift; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				D74B279423A5A75E00599982 /* RecommendationCollectionViewCell.swift */,
+				D74B279C23A5CFB200599982 /* RecommendationTableViewCell.swift */,
 			);
 			path = CollectionView;
 			sourceTree = "<group>";
@@ -543,6 +546,7 @@
 				D78D053C23A2823500653918 /* ConfigurationViewControllerCoordinator.swift in Sources */,
 				D78D055723A2C80A00653918 /* TMDBAPIEndPoint.swift in Sources */,
 				D78D052E23A276DE00653918 /* Coordinator.swift in Sources */,
+				D74B279D23A5CFB200599982 /* RecommendationTableViewCell.swift in Sources */,
 				D78D053F23A2AD7100653918 /* MoviesView.swift in Sources */,
 				D78D057923A3D71200653918 /* MovieDetailsViewModel.swift in Sources */,
 				D78D053223A27BCF00653918 /* TabBarCoordinator.swift in Sources */,
