@@ -76,7 +76,7 @@ extension MoviesViewController: UICollectionViewDelegate, UICollectionViewDataSo
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if (scrollView.contentOffset.y >= (scrollView.contentSize.height - scrollView.frame.size.height)) {
-            if viewModel.currentPage <= viewModel.totalOfPages {
+            if viewModel.currentPage < viewModel.totalOfPages {
                 viewModel.currentPage+=1
                 viewModel.loadMovies(page: nil)
             }

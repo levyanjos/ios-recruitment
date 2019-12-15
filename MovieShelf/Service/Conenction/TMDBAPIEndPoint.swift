@@ -59,7 +59,7 @@ extension TMDBApi: EndPointType {
             return self.apiAdressImage + "/" + posterSize.rawValue + "/" + posterPath
             
         case .recommendations(let movieID, let page, let language):
-            return self.apiAdress + "movie/" + "\(movieID)/recommendations?" + apiKey + "&language=" + language.rawValue + "&page=\(page)"
+            return self.apiAdress + "movie/\(movieID)" + "/recommendations?api_key=" + apiKey + "&language=" + language.rawValue + "&page=\(page)"
         }
     }
 }
