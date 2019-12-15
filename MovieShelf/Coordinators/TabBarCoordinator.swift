@@ -32,12 +32,8 @@ class TabBarCoordinator: Coordinator {
         let searchCoordinator = SearchViewControllerCoordinator(presenter: searchNavigation)
         searchCoordinator.start()
         
-        let configurationNavigation = UINavigationController()
-        let configurationCoordinator = ConfigurationViewControllerCoordinator(presenter: configurationNavigation)
-        configurationCoordinator.start()
-        
-        tabBarController.viewControllers = [moviesNavigation, searchNavigation, configurationNavigation]
-        self.childCoordinators = [moviesCoordinator, searchCoordinator, configurationCoordinator]
+        tabBarController.viewControllers = [moviesNavigation, searchNavigation]
+        self.childCoordinators = [moviesCoordinator, searchCoordinator]
         
         self.window.rootViewController = tabBarController
         self.window.makeKeyAndVisible()
