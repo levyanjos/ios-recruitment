@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		D7161BBC23A1567A00951262 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7161BBB23A1567A00951262 /* AppDelegate.swift */; };
-		D7161BC023A1567A00951262 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7161BBF23A1567A00951262 /* ViewController.swift */; };
 		D7161BC623A1567A00951262 /* MovieShelf.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D7161BC423A1567A00951262 /* MovieShelf.xcdatamodeld */; };
 		D7161BC823A1567C00951262 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7161BC723A1567C00951262 /* Assets.xcassets */; };
 		D7161BCB23A1567C00951262 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7161BC923A1567C00951262 /* LaunchScreen.storyboard */; };
@@ -65,7 +64,6 @@
 /* Begin PBXFileReference section */
 		D7161BB823A1567A00951262 /* MovieShelf.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieShelf.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7161BBB23A1567A00951262 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D7161BBF23A1567A00951262 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D7161BC523A1567A00951262 /* MovieShelf.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MovieShelf.xcdatamodel; sourceTree = "<group>"; };
 		D7161BC723A1567C00951262 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D7161BCA23A1567C00951262 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -162,7 +160,6 @@
 				D7161BF123A273F000951262 /* ViewModel */,
 				D7161BF023A273EA00951262 /* View */,
 				D7161BBB23A1567A00951262 /* AppDelegate.swift */,
-				D7161BBF23A1567A00951262 /* ViewController.swift */,
 				D7161BC723A1567C00951262 /* Assets.xcassets */,
 				D7161BC923A1567C00951262 /* LaunchScreen.storyboard */,
 				D7161BCC23A1567C00951262 /* Info.plist */,
@@ -569,7 +566,6 @@
 				D78D057923A3D71200653918 /* MovieDetailsViewModel.swift in Sources */,
 				D78D053223A27BCF00653918 /* TabBarCoordinator.swift in Sources */,
 				D78D056C23A30FA500653918 /* MovieCellViewModel.swift in Sources */,
-				D7161BC023A1567A00951262 /* ViewController.swift in Sources */,
 				D74B27A323A657AD00599982 /* SearchView.swift in Sources */,
 				D78D057323A3C0DC00653918 /* MovieRepository.swift in Sources */,
 				D78D055923A2D51A00653918 /* NetworkProtocol.swift in Sources */,
