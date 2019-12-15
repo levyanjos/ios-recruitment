@@ -32,11 +32,3 @@ class MoviesViewControllerCoordinator: Coordinator {
         self.presenter.pushViewController(viewController, animated: true)
     }
 }
-
-extension MoviesViewControllerCoordinator: AddDelegate {
-    
-    func add() {
-        //vai pra tela de detail, instancia tela e da push :D
-    }
-    
-}
