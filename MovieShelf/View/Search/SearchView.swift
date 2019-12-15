@@ -23,7 +23,7 @@ class SearchView: UIView {
                                      withReuseIdentifier: SearchBarCollectionReusableView.reuseIdentifier)
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.scrollDirection = .vertical
-        flowLayout.headerReferenceSize = CGSize(width: UIScreen.main.bounds.width, height: 100)
+        flowLayout.headerReferenceSize = CGSize(width: UIScreen.main.bounds.width, height: 62)
         view.collectionView.setCollectionViewLayout(flowLayout, animated: true)
         
         return view

@@ -123,7 +123,7 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
          func collectionView(_ collectionView: UICollectionView,
                              layout collectionViewLayout: UICollectionViewLayout,
                              minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-             return 8
+             return 16
          }
       
       func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -147,6 +147,7 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
         if kind == UICollectionView.elementKindSectionHeader {
             guard let headerView: SearchBarCollectionReusableView =  collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: SearchBarCollectionReusableView.reuseIdentifier, for: indexPath) as? SearchBarCollectionReusableView else { return UICollectionReusableView() }
             headerView.addSubview(searchView.searchController.searchBar)
+            headerView.clipsToBounds = false
 
             return headerView
         }
