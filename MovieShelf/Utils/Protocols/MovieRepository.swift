@@ -10,7 +10,7 @@ import UIKit
 
 protocol MovieRemoteDataSource {
     static func getTopMovies(page: Int,
-                             completion: @escaping (Result<[Movie], Errors>) -> Void)
+                             completion: @escaping (Result<TopMovies, Errors>) -> Void)
     
     static func downloadImage(postSize: TMDBApi.PosterSize,
                               posterPath: String,
@@ -21,12 +21,12 @@ public struct MovieRepository: MovieRemoteDataSource {
     
     private init() {}
     
-    static func getTopMovies(page: Int, completion: @escaping (Result<[Movie], Errors>) -> Void) {
+    static func getTopMovies(page: Int, completion: @escaping (Result<TopMovies, Errors>) -> Void) {
         let request = Request<TMDBApi>()
         request.run(TMDBApi.popularMovies(language: .pt, page: page)) { (result: Result<TopMovies, Errors>) in
             switch result {
             case .success(let topMovies):
-                return completion(.success(topMovies.results))
+                return completion(.success(topMovies))
             case .failure(let error):
                 return completion(.failure(error))
             }
