@@ -12,10 +12,15 @@ class SearchViewControllerCoordinator: Coordinator {
     
     let presenter: UINavigationController
     let viewController: SearchViewController
+    var coordinatorDetails: MovieDetailsViewCoodinator?
     
     init(presenter: UINavigationController) {
         self.presenter = presenter
         self.viewController = SearchViewController()
+        self.viewController.viewModel.pushDetailsClosure = {[weak self] movie in
+            self?.coordinatorDetails = MovieDetailsViewCoodinator(presenter: presenter, movie: movie)
+            self?.coordinatorDetails?.start()
+        }
     }
     
     func start() {
