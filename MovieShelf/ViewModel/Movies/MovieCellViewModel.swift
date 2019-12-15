@@ -37,7 +37,7 @@ class MovieCellViewModel {
                     self.movie.image = image
                     imageClosure(image)
                 }
-            case .failure(_):
+            case .failure:
                 DispatchQueue.main.async {
                     imageClosure(UIImage(named: "error"))
                 }

@@ -26,10 +26,10 @@ class MoviesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view = moviesView
+        viewModel.loadMovies(page: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        viewModel.loadMovies(page: nil)
         viewModel.errorLoadingDataClosure = { (error) in
             print(error.localizedDescription)
         }

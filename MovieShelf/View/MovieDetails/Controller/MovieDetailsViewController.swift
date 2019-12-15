@@ -62,13 +62,16 @@ extension MovieDetailsViewController: UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = UITableViewCell()
         if indexPath.section == 0 {
-             guard let descriptionCell = tableView.dequeueReusableCell(withIdentifier: DescripitonTableViewCell.reuseIdentifier, for: indexPath) as? DescripitonTableViewCell
+             guard let descriptionCell = tableView.dequeueReusableCell(withIdentifier:
+                DescripitonTableViewCell.reuseIdentifier,
+                for: indexPath) as? DescripitonTableViewCell
             else { return UITableViewCell() }
             descriptionCell.descriptionLabel.text = viewModel.overview
             cell = descriptionCell
         } else {
-            guard let recommendationCell = tableView.dequeueReusableCell(withIdentifier: RecommendationTableViewCell.reuseIdentifier, for: indexPath) as? RecommendationTableViewCell
-                else { return UITableViewCell() }
+            guard let recommendationCell = tableView.dequeueReusableCell(withIdentifier: RecommendationTableViewCell.reuseIdentifier,
+                for: indexPath) as? RecommendationTableViewCell
+            else { return UITableViewCell() }
             recommendationCell.collectionView.delegate = self
             recommendationCell.collectionView.dataSource = self
             cell = recommendationCell
@@ -80,10 +83,11 @@ extension MovieDetailsViewController: UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 30
     }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
-        
     }
+    
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if section == 0 {
             return "Descrição"
@@ -123,12 +127,17 @@ extension MovieDetailsViewController: UICollectionViewDelegate, UICollectionView
         return 20
     }
        
-   func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
        if (scrollView.contentOffset.x >= (scrollView.contentSize.width - scrollView.frame.size.width)) {
            if viewModel.currentPage < viewModel.totalOfPages {
                viewModel.currentPage+=1
                viewModel.loadMovies(page: nil)
            }
        }
-   }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        viewModel.cellWasTapped(atPosition: indexPath.row)
+
+    }
 }

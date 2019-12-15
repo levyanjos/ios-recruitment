@@ -13,10 +13,12 @@ class MovieDetailsViewModel {
     // MARK: - TypeAlias
     typealias BindingClosure = () -> Void
     typealias ErrorClouser = (Error) -> Void
+    typealias MovieClouser = ((Movie) -> Void)
        
     // MARK: - Closures
     var reloadCollectionClosure: BindingClosure?
     var errorLoadingDataClosure: ErrorClouser?
+    var pushDetailsClouser: MovieClouser?
     
     // MARK: - Variables
     private let movie: Movie
@@ -58,6 +60,13 @@ class MovieDetailsViewModel {
                 self.errorLoadingDataClosure?(error)
             }
         }
-           
-       }
+    }
+    
+    func cellWasTapped(atPosition position: Int) {
+        let cellViewModel = moviesCellViewModels[position]
+        var movie = recommendations[position]
+        movie.image = cellViewModel.image
+        pushDetailsClouser?(movie)
+    }
+    
 }
