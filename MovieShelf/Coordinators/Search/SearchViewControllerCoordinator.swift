@@ -11,11 +11,11 @@ import UIKit
 class SearchViewControllerCoordinator: Coordinator {
     
     let presenter: UINavigationController
-    let viewController: UIViewController
+    let viewController: SearchViewController
     
     init(presenter: UINavigationController) {
         self.presenter = presenter
-        self.viewController = UIViewController()
+        self.viewController = SearchViewController()
     }
     
     func start() {
