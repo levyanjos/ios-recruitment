@@ -18,6 +18,14 @@ class SearchView: UIView {
     lazy var moviesView: MoviesView = {
         let view = MoviesView()
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.collectionView.register(SearchBarCollectionReusableView.self,
+                                     forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+                                     withReuseIdentifier: SearchBarCollectionReusableView.reuseIdentifier)
+        let flowLayout = UICollectionViewFlowLayout()
+        flowLayout.scrollDirection = .vertical
+        flowLayout.headerReferenceSize = CGSize(width: UIScreen.main.bounds.width, height: 100)
+        view.collectionView.setCollectionViewLayout(flowLayout, animated: true)
+        
         return view
     }()
     
