@@ -55,7 +55,7 @@ class SearchViewController: UIViewController {
                     if backgroundview.isKind(of: UITextField.self) {
                         
                         let textFieldInsideUISearchBarLabel = textfield.value(forKey: "placeholderLabel") as? UILabel
-                        textFieldInsideUISearchBarLabel?.text = "Search Words"
+                        textFieldInsideUISearchBarLabel?.text = "Search by movies"
                     }
                 }
             }
