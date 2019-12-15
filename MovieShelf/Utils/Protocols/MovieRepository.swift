@@ -19,6 +19,10 @@ protocol MovieRemoteDataSource {
     static func getRecommendations(movieID: Int,
                                    page: Int,
                                    completion: @escaping (Result<TopMovies, Errors>) -> Void)
+    
+    static func searchForMoviesBy(querry: String,
+                                  page: Int,
+                                  completion: @escaping (Result<TopMovies, Errors>) -> Void)
 }
 
 public struct MovieRepository: MovieRemoteDataSource {
@@ -61,6 +65,21 @@ public struct MovieRepository: MovieRemoteDataSource {
                 return completion(.success(movies))
             case .failure(let error):
                 return completion(.failure(error))
+            }
+        }
+    }
+    
+    static func searchForMoviesBy(querry: String,
+                                  page: Int,
+                                  completion: @escaping (Result<TopMovies, Errors>) -> Void) {
+        let request = Request<TMDBApi>()
+        request.run(TMDBApi.searchMovieBy(querry: querry, language: .pt, page: page)) { (result: Result<TopMovies, Errors>) in
+            switch result {
+            case .success(let topMovies):
+                completion(.success(topMovies))
+            case .failure(let error):
+                completion(.failure(error))
+
             }
         }
     }
