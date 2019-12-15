@@ -15,6 +15,10 @@ protocol MovieRemoteDataSource {
     static func downloadImage(postSize: TMDBApi.PosterSize,
                               posterPath: String,
                               completion: @escaping (Result<UIImage?, Error>) -> Void)
+    
+    static func getRecommendations(movieID: Int,
+                                   page: Int,
+                                   completion: @escaping (Result<TopMovies, Errors>) -> Void)
 }
 
 public struct MovieRepository: MovieRemoteDataSource {
@@ -47,4 +51,17 @@ public struct MovieRepository: MovieRemoteDataSource {
         }
     }
     
+    static func getRecommendations(movieID: Int,
+                                   page: Int,
+                                   completion: @escaping (Result<TopMovies, Errors>) -> Void) {
+        let request = Request<TMDBApi>()
+        request.run(TMDBApi.recommendations(movieID: movieID, page: page, language: .pt)) { (result: Result<TopMovies, Errors>) in
+            switch result {
+            case .success(let movies):
+                return completion(.success(movies))
+            case .failure(let error):
+                return completion(.failure(error))
+            }
+        }
+    }
 }
