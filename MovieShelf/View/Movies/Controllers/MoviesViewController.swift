@@ -12,7 +12,6 @@ class MoviesViewController: UIViewController {
     
     // MARK: - ViewModel
     var viewModel: MoviesViewModel = MoviesViewModel()
-//    var coordinator:
     
     // MARK: - UI Variable
     
@@ -27,10 +26,10 @@ class MoviesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view = moviesView
+        viewModel.loadMovies(page: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        viewModel.loadMovies(page: nil)
         viewModel.errorLoadingDataClosure = { (error) in
             print(error.localizedDescription)
         }
@@ -77,8 +76,10 @@ extension MoviesViewController: UICollectionViewDelegate, UICollectionViewDataSo
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if (scrollView.contentOffset.y >= (scrollView.contentSize.height - scrollView.frame.size.height)) {
-            viewModel.currentPage+=1
-            viewModel.loadMovies(page: nil)
+            if viewModel.currentPage < viewModel.totalOfPages {
+                viewModel.currentPage+=1
+                viewModel.loadMovies(page: nil)
+            }
         }
     }
     

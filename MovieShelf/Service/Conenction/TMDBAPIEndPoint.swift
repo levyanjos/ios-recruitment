@@ -11,6 +11,7 @@ import Foundation
 public enum TMDBApi {
     case popularMovies(language: Language, page: Int)
     case posterImage(posterSize: PosterSize, posterPath: String)
+    case recommendations(movieID: Int, page: Int, language: Language)
     
     public enum PosterSize: String {
         case w92
@@ -56,6 +57,9 @@ extension TMDBApi: EndPointType {
         
         case .posterImage(let posterSize, let posterPath):
             return self.apiAdressImage + "/" + posterSize.rawValue + "/" + posterPath
+            
+        case .recommendations(let movieID, let page, let language):
+            return self.apiAdress + "movie/\(movieID)" + "/recommendations?api_key=" + apiKey + "&language=" + language.rawValue + "&page=\(page)"
         }
     }
 }

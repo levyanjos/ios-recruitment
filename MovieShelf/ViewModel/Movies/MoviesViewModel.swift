@@ -13,23 +13,25 @@ class MoviesViewModel {
     // MARK: - TypeAlias
     typealias BindingClosure = () -> Void
     typealias ErrorClouser = (Error) -> Void
+    typealias MovieClouser = ((Movie) -> Void)
     
     // MARK: - Closures
     var reloadCollectionClosure: BindingClosure?
     var errorLoadingDataClosure: ErrorClouser?
-    
-    var pushDetailsClosure: ((Movie) -> Void)?
+    var pushDetailsClosure: MovieClouser?
     
     // MARK: - Variables
     private var movies: [Movie]
     
     var currentPage = 1
     
+    var totalOfPages = 0
+    
     var moviesCellViewModels = [MovieCellViewModel]() {
-           didSet {
-               self.reloadCollectionClosure?()
-           }
+       didSet {
+           self.reloadCollectionClosure?()
        }
+    }
     
     var numberOfCells: Int {
         return moviesCellViewModels.count
@@ -43,12 +45,15 @@ class MoviesViewModel {
     }
     
     func loadMovies(page: Int?) {
-        MovieRepository.getTopMovies(page: page ?? currentPage) { (result: Result<[Movie], Errors>) -> Void in
+        MovieRepository.getTopMovies(page: page ?? currentPage) { (result: Result<TopMovies, Errors>) -> Void in
             switch result {
-            case .success(let movies):
-                let newMoviews = movies.map { MovieCellViewModel(movie: $0)}
+            case .success(let movie):
+                let newMoviews = movie.results.map { MovieCellViewModel(movie: $0)}
                 self.moviesCellViewModels.append(contentsOf: newMoviews)
-                self.movies.append(contentsOf: movies)
+                self.movies.append(contentsOf: movie.results)
+                if self.totalOfPages == 0 {
+                    self.totalOfPages = movie.totalPages
+                }
             case .failure(let error):
                 self.errorLoadingDataClosure?(error)
             }
@@ -57,7 +62,9 @@ class MoviesViewModel {
     }
     
     func cellWasTapped(atPosition position: Int) {
-        let movie = self.movies[position]
+        let cellViewModel = self.moviesCellViewModels[position]
+        var movie = self.movies[position]
+        movie.image = cellViewModel.image
         pushDetailsClosure?(movie)
     }
 }
