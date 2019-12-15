@@ -12,6 +12,8 @@ class RecommendationCollectionViewCell: UICollectionViewCell {
     
     private lazy var postView: PosterView = {
         let poster = PosterView()
+        poster.translatesAutoresizingMaskIntoConstraints = false
+
         return poster
     }()
     
