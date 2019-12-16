@@ -9,8 +9,8 @@
 import UIKit
 
 extension UISearchController {
+    /** Returns true if searchBar text is empty or nil */
     func searchBarIsEmpty() -> Bool {
-        // Returns true if the text is empty or nil
         return self.searchBar.text?.isEmpty ?? true
     }
 }

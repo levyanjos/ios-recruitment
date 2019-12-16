@@ -10,6 +10,7 @@ import UIKit
 
 class MoviesView: UIView {
 
+    // MARK: - UI Variable
     private(set) lazy var collectionView: UICollectionView = {
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.scrollDirection = .vertical
@@ -20,6 +21,7 @@ class MoviesView: UIView {
         return collection
     }()
     
+    // MARK: - Initializators
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.setupView()
@@ -28,7 +30,6 @@ class MoviesView: UIView {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         self.setupView()
-
     }
     
 }
@@ -40,14 +41,14 @@ extension MoviesView: ViewCode {
     
     func setupConstraints() {
         NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(equalTo: topAnchor),
-            collectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            collectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: bottomAnchor)
+            collectionView.topAnchor.constraint(equalTo: topAnchor, constant: 8),
+            collectionView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
+            collectionView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
+            collectionView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -8)
         ])
     }
     
     func setupAdditionalConfigurantion() {
-        backgroundColor = .white
+        backgroundColor = .groupTableViewBackground
     }
 }

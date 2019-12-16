@@ -13,7 +13,10 @@ class SearchViewControllerCoordinator: Coordinator {
     let presenter: UINavigationController
     let viewController: SearchViewController
     var coordinatorDetails: MovieDetailsViewCoodinator?
-    
+    /**
+        Coordinato initilizator
+        - parameter presenter: The root application UINavigationController
+    */
     init(presenter: UINavigationController) {
         self.presenter = presenter
         self.viewController = SearchViewController()
@@ -24,7 +27,10 @@ class SearchViewControllerCoordinator: Coordinator {
     }
     
     func start() {
-        viewController.title = "Search"
+        self.viewController.title = "Search"
+        self.presenter.navigationBar.barTintColor = UIColor.orange
+        self.presenter.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
+        self.presenter.navigationBar.tintColor = .white
         self.presenter.pushViewController(viewController, animated: true)
     }
 }

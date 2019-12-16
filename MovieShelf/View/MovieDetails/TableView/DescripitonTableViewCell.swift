@@ -9,7 +9,8 @@
 import UIKit
 
 class DescripitonTableViewCell: UITableViewCell {
-
+    
+    // MARK: - UI Variable
     lazy var descriptionLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -17,6 +18,7 @@ class DescripitonTableViewCell: UITableViewCell {
         return label
     }()
     
+    // MARK: - Initializators
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.setupView()

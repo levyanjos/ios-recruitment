@@ -7,8 +7,11 @@
 //
 
 import UIKit
-
+/**
+    Reusable view to collectionHeaderView
+*/
 class SearchBarCollectionReusableView: UICollectionReusableView {
+    // MARK: - Initializators
     override init(frame: CGRect) {
         super.init(frame: frame)
     }

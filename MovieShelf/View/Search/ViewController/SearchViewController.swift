@@ -55,7 +55,7 @@ class SearchViewController: UIViewController {
                     if backgroundview.isKind(of: UITextField.self) {
                         
                         let textFieldInsideUISearchBarLabel = textfield.value(forKey: "placeholderLabel") as? UILabel
-                        textFieldInsideUISearchBarLabel?.text = "Search Words"
+                        textFieldInsideUISearchBarLabel?.text = "Search by movies"
                     }
                 }
             }
@@ -82,6 +82,7 @@ extension SearchViewController: UISearchResultsUpdating, UISearchControllerDeleg
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        // timer responsible to make self calls to api
         self.searchView.timer.invalidate()
         self.searchView.timer = Timer.scheduledTimer(timeInterval: 0.35,
                                                      target: self,
@@ -117,14 +118,14 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
       func collectionView(_ collectionView: UICollectionView,
                           layout collectionViewLayout: UICollectionViewLayout,
                           sizeForItemAt indexPath: IndexPath) -> CGSize {
-          return CGSize(width: (collectionView.frame.width/2) - 16, height: (collectionView.frame.height/2.5) - 16)
-      }
-      
-      func collectionView(_ collectionView: UICollectionView,
-                          layout collectionViewLayout: UICollectionViewLayout,
-                          minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-          return 20
-      }
+             return CGSize(width: (collectionView.frame.width/2) - 16, height: (collectionView.frame.height/2.2) - 16)
+         }
+         
+         func collectionView(_ collectionView: UICollectionView,
+                             layout collectionViewLayout: UICollectionViewLayout,
+                             minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+             return 16
+         }
       
       func scrollViewDidScroll(_ scrollView: UIScrollView) {
           if (scrollView.contentOffset.y >= (scrollView.contentSize.height - scrollView.frame.size.height)) {
@@ -147,9 +148,17 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
         if kind == UICollectionView.elementKindSectionHeader {
             guard let headerView: SearchBarCollectionReusableView =  collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: SearchBarCollectionReusableView.reuseIdentifier, for: indexPath) as? SearchBarCollectionReusableView else { return UICollectionReusableView() }
             headerView.addSubview(searchView.searchController.searchBar)
+            headerView.clipsToBounds = false
 
             return headerView
         }
         return UICollectionReusableView()
     }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        insetForSectionAt section: Int) -> UIEdgeInsets {
+           return UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 8)
+    }
+       
 }

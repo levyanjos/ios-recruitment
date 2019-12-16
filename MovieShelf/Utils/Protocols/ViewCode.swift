@@ -8,6 +8,11 @@
 
 import Foundation
 
+/**
+ Protocol enable to make standardized application View code
+ 
+ You must to call `setupView()` in each view initialization
+ */
 protocol ViewCode {
     func buildViewHierarchy()
     func setupConstraints()
