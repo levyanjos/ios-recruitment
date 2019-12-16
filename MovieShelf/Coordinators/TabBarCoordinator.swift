@@ -8,7 +8,9 @@
 
 import Foundation
 import UIKit
-
+/**
+    TabBar Coordinator
+*/
 class TabBarCoordinator: Coordinator {
     
     //"o pai" da tela que será instanciada pela coordinator
@@ -32,13 +34,16 @@ class TabBarCoordinator: Coordinator {
         let searchCoordinator = SearchViewControllerCoordinator(presenter: searchNavigation)
         searchCoordinator.start()
         
-        let configurationNavigation = UINavigationController()
-        let configurationCoordinator = ConfigurationViewControllerCoordinator(presenter: configurationNavigation)
-        configurationCoordinator.start()
+        //setting UI configurations to tabbar
+        tabBarController.viewControllers = [moviesNavigation, searchNavigation]
+        moviesNavigation.tabBarItem.image = UIImage(named: "movie")
+        searchNavigation.tabBarItem.image = UIImage(named: "search")
+        self.childCoordinators = [moviesCoordinator, searchCoordinator]
         
-        tabBarController.viewControllers = [moviesNavigation, searchNavigation, configurationNavigation]
-        self.childCoordinators = [moviesCoordinator, searchCoordinator, configurationCoordinator]
-        
+        tabBarController.tabBar.barTintColor = .orange
+        tabBarController.tabBar.tintColor = .white
+        tabBarController.tabBar.unselectedItemTintColor = .darkGray
+    
         self.window.rootViewController = tabBarController
         self.window.makeKeyAndVisible()
     }

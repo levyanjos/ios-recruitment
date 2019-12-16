@@ -28,7 +28,10 @@ class MovieCellViewModel {
     init(movie: Movie) {
         self.movie = movie
     }
-
+    /**
+        Funcition resposible for hang on with downlod of movie image from API
+       - parameter imageClouser: The clouser that should be implemented to recive donwlodade image and set to View
+    */
     func downloadImage(imageClosure: @escaping ImageBindingClosure) {
         MovieRepository.downloadImage(postSize: .w780, posterPath: movie.posterPath) { (result: Result<UIImage?, Error>) in
             switch result {

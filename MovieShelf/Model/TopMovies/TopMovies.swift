@@ -9,6 +9,9 @@
 import UIKit
 
 // MARK: - TopMovies
+/**
+    Struct that represents API information to be Decoder from a JSON
+*/
 struct TopMovies: Codable {
     let page, totalResults, totalPages: Int
     let results: [Movie]

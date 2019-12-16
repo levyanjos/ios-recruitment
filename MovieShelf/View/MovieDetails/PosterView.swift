@@ -10,13 +10,15 @@ import UIKit
 
 class PosterView: UIView {
 
-     lazy var imageView: UIImageView = {
+    // MARK: - UI Variable
+    lazy var imageView: UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
         image.contentMode = .scaleAspectFit
         return image
-     }()
+    }()
     
+    // MARK: - Initializators
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.setupView()

@@ -9,7 +9,8 @@
 import UIKit
 
 class MovieDetailsView: UIView {
-
+    
+    // MARK: - UI Variable
     private(set) lazy var tableView: UITableView = {
         let tableView = UITableView(frame: CGRect.zero, style: .grouped)
         tableView.backgroundColor = .clear
@@ -27,9 +28,12 @@ class MovieDetailsView: UIView {
     private(set) lazy var headerView: PosterView = {
         let rect = CGRect(x: 0.0, y: 0.0, width: self.frame.width, height: 0.0)
         let headerView = PosterView(frame: rect)
+        headerView.imageView.contentMode = .scaleAspectFill
+        headerView.imageView.clipsToBounds = true
         return headerView
     }()
-        
+   
+    // MARK: - Initializators
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.setupView()

@@ -13,7 +13,10 @@ class MoviesViewControllerCoordinator: Coordinator {
     let presenter: UINavigationController
     let viewController: MoviesViewController
     var coordinatorDetails: MovieDetailsViewCoodinator?
-    
+    /**
+     Coordinato initilizator
+    - parameter presenter: The root application UINavigationController
+    */
     init(presenter: UINavigationController) {
         self.presenter = presenter
         self.viewController = MoviesViewController()
@@ -26,14 +29,10 @@ class MoviesViewControllerCoordinator: Coordinator {
     func start() {
         viewController.title = "Movies"
         viewController.navigationItem.title = "Movies"
+        presenter.navigationBar.barTintColor = UIColor.orange
+        presenter.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
+        presenter.navigationBar.tintColor = .white
         self.presenter.pushViewController(viewController, animated: true)
     }
 }
 
-extension MoviesViewControllerCoordinator: AddDelegate {
-    
-    func add() {
-        //vai pra tela de detail, instancia tela e da push :D
-    }
-    
-}
