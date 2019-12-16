@@ -7,7 +7,7 @@
   <img src="/Pictures/4.png" width="200" />
 </p>
 
-Aplicação de biblioteca de livros feita com swift e iOS Nativo
+Aplicação de biblioteca de filmes feita com swift e iOS Nativo
 
 ## Requisitos
 - Swift 5
