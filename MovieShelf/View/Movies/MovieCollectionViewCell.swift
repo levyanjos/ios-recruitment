@@ -9,6 +9,8 @@
 import UIKit
 
 class MovieCollectionViewCell: UICollectionViewCell {
+    
+    // MARK: - UI Variable
     lazy var imageView: UIImageView = {
        let image = UIImageView()
        image.translatesAutoresizingMaskIntoConstraints = false
@@ -22,6 +24,7 @@ class MovieCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
+    // MARK: - Initializators
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.setupView()

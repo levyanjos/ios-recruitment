@@ -9,7 +9,7 @@
 import UIKit
 
 class RecommendationCollectionViewCell: UICollectionViewCell {
-    
+    // MARK: - UI Variable
     private lazy var postView: PosterView = {
         let poster = PosterView()
         poster.translatesAutoresizingMaskIntoConstraints = false
@@ -25,7 +25,7 @@ class RecommendationCollectionViewCell: UICollectionViewCell {
             self.postView.imageView.image = newValue
         }
     }
-    
+   // MARK: - Initializators
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.setupView()

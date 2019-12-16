@@ -13,7 +13,10 @@ class MoviesViewControllerCoordinator: Coordinator {
     let presenter: UINavigationController
     let viewController: MoviesViewController
     var coordinatorDetails: MovieDetailsViewCoodinator?
-    
+    /**
+     Coordinato initilizator
+    - parameter presenter: The root application UINavigationController
+    */
     init(presenter: UINavigationController) {
         self.presenter = presenter
         self.viewController = MoviesViewController()
@@ -32,3 +35,4 @@ class MoviesViewControllerCoordinator: Coordinator {
         self.presenter.pushViewController(viewController, animated: true)
     }
 }
+

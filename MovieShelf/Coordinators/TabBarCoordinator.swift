@@ -8,7 +8,9 @@
 
 import Foundation
 import UIKit
-
+/**
+    TabBar Coordinator
+*/
 class TabBarCoordinator: Coordinator {
     
     //"o pai" da tela que será instanciada pela coordinator
@@ -32,6 +34,7 @@ class TabBarCoordinator: Coordinator {
         let searchCoordinator = SearchViewControllerCoordinator(presenter: searchNavigation)
         searchCoordinator.start()
         
+        //setting UI configurations to tabbar
         tabBarController.viewControllers = [moviesNavigation, searchNavigation]
         moviesNavigation.tabBarItem.image = UIImage(named: "movie")
         searchNavigation.tabBarItem.image = UIImage(named: "search")

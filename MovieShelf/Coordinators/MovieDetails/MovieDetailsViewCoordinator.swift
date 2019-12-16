@@ -7,12 +7,19 @@
 //
 
 import UIKit
-
+/**
+    Movie Details Coordinator
+*/
 class MovieDetailsViewCoodinator: Coordinator {
     let presenter: UINavigationController
     let viewController: MovieDetailsViewController
     var coordinatorDetails: MovieDetailsViewCoodinator?
     
+    /**
+     Coordinato initilizator
+    - parameter presenter: The root application UINavigationController
+    - parameter Movie: A specifc movie to be presented in ViewController
+    */
     init(presenter: UINavigationController, movie: Movie) {
         self.presenter = presenter
         viewController = MovieDetailsViewController(viewModel: MovieDetailsViewModel(movie: movie))
@@ -22,7 +29,6 @@ class MovieDetailsViewCoodinator: Coordinator {
             self?.coordinatorDetails = MovieDetailsViewCoodinator(presenter: presenter, movie: movie)
             self?.coordinatorDetails?.start()
         }
-        
     }
     
     func start() {

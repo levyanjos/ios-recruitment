@@ -7,7 +7,9 @@
 //
 
 import Foundation
-
+/**
+    Movies Flow application view model
+*/
 class MoviesViewModel {
     
     // MARK: - TypeAlias
@@ -23,10 +25,12 @@ class MoviesViewModel {
     // MARK: - Variables
     private var movies: [Movie]
     
+    /** the current page of api paggination request */
     var currentPage = 1
-    
+    /** the total of pages that can be requested from api */
     var totalOfPages = 0
     
+    /** View Model of each cell*/
     var moviesCellViewModels = [MovieCellViewModel]() {
        didSet {
            self.reloadCollectionClosure?()
@@ -43,7 +47,10 @@ class MoviesViewModel {
         
         self.moviesCellViewModels = movies.map { MovieCellViewModel(movie: $0) }
     }
-    
+    /**
+        Function responsible for load movies from api
+        - parameter page: The page of resquest
+    */
     func loadMovies(page: Int?) {
         MovieRepository.getTopMovies(page: page ?? currentPage) { (result: Result<TopMovies, Errors>) -> Void in
             switch result {
@@ -59,7 +66,12 @@ class MoviesViewModel {
             }
         }
     }
-    
+    /**
+        Function responsible for search movies from user input
+        - parameter querry: User input
+        - parameter page: The page of resquest
+        - parameter erase: Boolean that tells if previous movies should be discarded
+    */
     func searchMovies(by querry: String, page: Int?, erase: Bool) {
         MovieRepository.searchForMoviesBy(querry: querry, page: page ?? currentPage) { (result: Result<TopMovies, Errors>) in
             switch result {
@@ -79,7 +91,10 @@ class MoviesViewModel {
             }
         }
     }
-    
+    /**
+          Function responsible for pushing a movie to details
+          - parameter position: Index of a cell into the array of cell - It can be indexPath
+    */
     func cellWasTapped(atPosition position: Int) {
         let cellViewModel = self.moviesCellViewModels[position]
         var movie = self.movies[position]

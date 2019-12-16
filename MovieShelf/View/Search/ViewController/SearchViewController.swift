@@ -82,6 +82,7 @@ extension SearchViewController: UISearchResultsUpdating, UISearchControllerDeleg
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        // timer responsible to make self calls to api
         self.searchView.timer.invalidate()
         self.searchView.timer = Timer.scheduledTimer(timeInterval: 0.35,
                                                      target: self,

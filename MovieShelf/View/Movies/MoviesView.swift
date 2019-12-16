@@ -10,6 +10,7 @@ import UIKit
 
 class MoviesView: UIView {
 
+    // MARK: - UI Variable
     private(set) lazy var collectionView: UICollectionView = {
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.scrollDirection = .vertical
@@ -20,6 +21,7 @@ class MoviesView: UIView {
         return collection
     }()
     
+    // MARK: - Initializators
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.setupView()
@@ -28,7 +30,6 @@ class MoviesView: UIView {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         self.setupView()
-
     }
     
 }

@@ -10,6 +10,7 @@ import UIKit
 
 class SearchView: UIView {
 
+    // MARK: - UI Variable
     lazy var searchController: UISearchController = {
         let searchControl = UISearchController(searchResultsController: nil)
         return searchControl
@@ -34,6 +35,7 @@ class SearchView: UIView {
         return time
     }()
     
+    // MARK: - Initializators
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.setupView()
@@ -45,7 +47,6 @@ class SearchView: UIView {
 
     }
 }
-
 extension SearchView: ViewCode {
     func buildViewHierarchy() {
         addSubview(moviesView)

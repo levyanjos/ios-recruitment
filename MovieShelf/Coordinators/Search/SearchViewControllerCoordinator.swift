@@ -13,7 +13,10 @@ class SearchViewControllerCoordinator: Coordinator {
     let presenter: UINavigationController
     let viewController: SearchViewController
     var coordinatorDetails: MovieDetailsViewCoodinator?
-    
+    /**
+        Coordinato initilizator
+        - parameter presenter: The root application UINavigationController
+    */
     init(presenter: UINavigationController) {
         self.presenter = presenter
         self.viewController = SearchViewController()

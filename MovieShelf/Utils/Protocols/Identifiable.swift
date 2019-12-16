@@ -8,7 +8,17 @@
 
 import UIKit
 
+/**
+Protocol enable to work with typeSafe reusable idetifiers where class itself names gonna be the identifier
+
+*/
+
 protocol Identifiable {
+    /**
+    Reusable value from some identifiable View
+
+    - returns: return a `String` with Identifiable name
+    */
     static var reuseIdentifier: String { get }
 }
 

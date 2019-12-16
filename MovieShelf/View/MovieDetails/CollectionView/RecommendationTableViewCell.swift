@@ -9,7 +9,8 @@
 import UIKit
 
 class RecommendationTableViewCell: UITableViewCell {
-
+    
+    // MARK: - UI Variable
     private(set) lazy var collectionView: UICollectionView = {
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.scrollDirection = .horizontal
@@ -22,6 +23,7 @@ class RecommendationTableViewCell: UITableViewCell {
         return collection
     }()
     
+    // MARK: - Initializators
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.setupView()
