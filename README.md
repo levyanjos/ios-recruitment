@@ -7,12 +7,12 @@
   <img src="/Pictures/4.png" width="200" />
 </p>
 
-Aplicaçãao de biblioteca de livros feita com iOS Nativo
+Aplicação de biblioteca de livros feita com swift e iOS Nativo
 
 ## Requisitos
 - Swift 5
 - Target: iOS 10.3.1
-- SwiftLins instalado pelo HomeBrew
+- SwiftLint instalado pelo HomeBrew
 
 
 ## Funcionalidades
